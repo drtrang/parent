@@ -6,12 +6,12 @@
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
-        <version>Brussels-SR5</version>
+        <version>Brussels-SR6</version>
     </parent>
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -59,26 +59,26 @@
         <commons-logging.version>99.0-does-not-exist</commons-logging.version>
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-net.version>3.6</commons-net.version>
-        <commons-pool2.version>2.4.3</commons-pool2.version>
+        <commons-pool2.version>2.5.0</commons-pool2.version>
         <commons-validator.version>1.6</commons-validator.version>
         <copiers.version>1.1.1</copiers.version>
         <druid-spring-boot.version>1.1.3</druid-spring-boot.version>
-        <druid.version>1.1.5</druid.version>
+        <druid.version>1.1.6</druid.version>
         <dubbo.version>2.5.7</dubbo.version>
         <easypoi.version>2.4.0</easypoi.version>
-        <fastjson.version>1.2.41</fastjson.version>
+        <fastjson.version>1.2.44</fastjson.version>
         <fst.version>2.56</fst.version>
-        <guava.version>23.0</guava.version>
-        <httpclient.version>4.5.3</httpclient.version>
+        <guava.version>23.6-jre</guava.version>
+        <httpclient.version>4.5.4</httpclient.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <junit-params.version>1.1.1</junit-params.version>
         <kafka.version>1.0</kafka.version>
-        <logback-access-spring-boot-starter.version>2.6.0</logback-access-spring-boot-starter.version>
+        <logback-access-spring-boot-starter.version>2.7.0</logback-access-spring-boot-starter.version>
         <logback.version>1.2.3</logback.version>
-        <mapper-spring-boot-starter.version>1.1.5</mapper-spring-boot-starter.version>
-        <mapper.version>3.4.4</mapper.version>
+        <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
+        <mapper.version>3.4.6</mapper.version>
         <mybatis-generator-extension.version>0.0.3</mybatis-generator-extension.version>
-        <mybatis-generator.version>1.3.5</mybatis-generator.version>
+        <mybatis-generator.version>1.3.6</mybatis-generator.version>
         <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <mybatis.version>3.4.5</mybatis.version>
@@ -88,13 +88,13 @@
         <pdfbox.version>2.0.8</pdfbox.version>
         <poi.version>3.17</poi.version>
         <quartz.version>2.3.0</quartz.version>
-        <redisson.version>3.5.5</redisson.version>
+        <redisson.version>3.5.6</redisson.version>
         <rxjava.version>2.1.7</rxjava.version>
-        <sharding-jdbc.version>2.0.0.M3</sharding-jdbc.version>
+        <sharding-jdbc.version>2.0.1</sharding-jdbc.version>
         <shiro.version>1.4.0</shiro.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-autoconfigure.version>1.0.0</spring-boot-autoconfigure.version>
-        <spring-kafka.version>2.0.1.RELEASE</spring-kafka.version>
+        <spring-kafka.version>2.1.0.RELEASE</spring-kafka.version>
         <swagger2.version>2.7.0</swagger2.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <typehandlers-encrypt.version>1.1.1</typehandlers-encrypt.version>
@@ -115,7 +115,7 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
