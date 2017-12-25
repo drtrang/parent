@@ -72,7 +72,6 @@
         <httpclient.version>4.5.4</httpclient.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <junit-params.version>1.1.1</junit-params.version>
-        <kafka.version>1.0</kafka.version>
         <logback-access-spring-boot-starter.version>2.7.0</logback-access-spring-boot-starter.version>
         <logback.version>1.2.3</logback.version>
         <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
@@ -99,7 +98,7 @@
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <typehandlers-encrypt.version>1.1.1</typehandlers-encrypt.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
-        <xerces.version>2.11.0.SP5</xerces.version>
+        <xerces.version>2.11.0-22</xerces.version>
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.1</zxing.version>
         <!-- Maven 插件 -->
@@ -498,11 +497,6 @@
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper</artifactId>
                 <version>${mapper.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>xerces</groupId>
-                <artifactId>xercesImpl</artifactId>
-                <version>${xerces.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
