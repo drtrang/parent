@@ -11,7 +11,7 @@
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -569,6 +569,7 @@
                         <inherited>true</inherited>
                         <executions>
                             <execution>
+                                <id>attach-javadocs</id>
                                 <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
@@ -576,8 +577,10 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <encoding>UTF-8</encoding>
+                            <charset>UTF-8</charset>
+                            <!-- 修复java8中生成javadoc失败的问题 -->
+                            <additionalJOption>-Xdoclint:none</additionalJOption>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -659,6 +662,7 @@
                     <inherited>true</inherited>
                     <executions>
                         <execution>
+                            <id>attach-javadocs</id>
                             <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
@@ -666,8 +670,10 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                        <additionalparam>-Xdoclint:none</additionalparam>
+                        <encoding>UTF-8</encoding>
+                        <charset>UTF-8</charset>
+                        <!-- 修复java8中生成javadoc失败的问题 -->
+                        <additionalJOption>-Xdoclint:none</additionalJOption>
                     </configuration>
                 </plugin>
                 <plugin>
