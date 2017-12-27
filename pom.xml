@@ -11,7 +11,7 @@
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -62,7 +62,7 @@
         <commons-pool2.version>2.5.0</commons-pool2.version>
         <commons-validator.version>1.6</commons-validator.version>
         <copiers.version>1.1.1</copiers.version>
-        <druid-spring-boot.version>1.1.4</druid-spring-boot.version>
+        <druid-spring-boot.version>1.1.5</druid-spring-boot.version>
         <druid.version>1.1.6</druid.version>
         <dubbo.version>2.5.7</dubbo.version>
         <easypoi.version>2.4.0</easypoi.version>
@@ -93,7 +93,7 @@
         <sharding-jdbc.version>2.0.1</sharding-jdbc.version>
         <shiro.version>1.4.0</shiro.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
-        <spring-boot-autoconfigure.version>1.0.1</spring-boot-autoconfigure.version>
+        <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
         <spring-kafka.version>2.1.0.RELEASE</spring-kafka.version>
         <swagger2.version>2.7.0</swagger2.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
@@ -173,6 +173,16 @@
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.drtrang</groupId>
+                <artifactId>druid-spring-boot-actuator-autoconfigure</artifactId>
+                <version>${druid-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.drtrang</groupId>
+                <artifactId>druid-spring-boot-actuator-starter</artifactId>
                 <version>${druid-spring-boot.version}</version>
             </dependency>
             <dependency>
