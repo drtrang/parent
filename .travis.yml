@@ -1,0 +1,10 @@
+language: java
+jdk:
+  - oraclejdk8
+  - openjdk7
+  - openjdk6
+sudo: false
+install: false
+cache:
+  directories:
+    - $HOME/.m2/repository
