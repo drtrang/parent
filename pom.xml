@@ -11,7 +11,7 @@
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -61,23 +61,24 @@
         <commons-net.version>3.6</commons-net.version>
         <commons-pool2.version>2.5.0</commons-pool2.version>
         <commons-validator.version>1.6</commons-validator.version>
-        <copiers.version>1.1.1</copiers.version>
-        <druid-spring-boot-starter.version>1.1.6</druid-spring-boot-starter.version>
         <druid.version>1.1.6</druid.version>
-        <dubbo.version>2.5.8</dubbo.version>
+        <dubbo.version>2.6.0</dubbo.version>
         <easypoi.version>2.4.0</easypoi.version>
         <fastjson.version>1.2.44</fastjson.version>
-        <fst.version>2.56</fst.version>
+        <fst.version>2.57</fst.version>
         <guava.version>23.6-jre</guava.version>
         <httpclient.version>4.5.4</httpclient.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <junit-params.version>1.1.1</junit-params.version>
         <logback-access-spring-boot-starter.version>2.7.0</logback-access-spring-boot-starter.version>
         <logback.version>1.2.3</logback.version>
+        <!--<mapper-spring-boot-starter.version>1.2.1</mapper-spring-boot-starter.version>-->
         <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
+        <!--<mapper.version>3.5.0</mapper.version>-->
         <mapper.version>3.4.6</mapper.version>
         <mybatis-generator-extension.version>0.0.4</mybatis-generator-extension.version>
         <!-- 升级到 1.3.6 版本后出现子Module依赖找不到的问题 -->
+        <!--<mybatis-generator.version>1.3.6</mybatis-generator.version>-->
         <mybatis-generator.version>1.3.5</mybatis-generator.version>
         <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
@@ -90,16 +91,14 @@
         <poi.version>3.17</poi.version>
         <quartz.version>2.3.0</quartz.version>
         <redisson.version>3.5.7</redisson.version>
-        <redisson-spring-boot-starter.version>1.0.1</redisson-spring-boot-starter.version>
         <rxjava.version>2.1.8</rxjava.version>
         <sharding-jdbc.version>2.0.1</sharding-jdbc.version>
         <shiro.version>1.4.0</shiro.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
-        <spring-kafka.version>2.1.0.RELEASE</spring-kafka.version>
-        <swagger2.version>2.7.0</swagger2.version>
+        <spring-kafka.version>2.1.1.RELEASE</spring-kafka.version>
+        <swagger2.version>2.8.0</swagger2.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
-        <typehandlers-encrypt.version>1.1.1</typehandlers-encrypt.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
         <xerces.version>2.11.0-22</xerces.version>
         <zkclient.version>0.10</zkclient.version>
@@ -107,7 +106,7 @@
         <!-- Maven 插件 -->
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
         <maven-archetype-plugin.version>3.0.1</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
         <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
@@ -129,31 +128,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>spring-boot-autoconfigure</artifactId>
-                <version>${spring-boot-autoconfigure.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>druid-spring-boot-autoconfigure</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>druid-spring-boot-actuator-autoconfigure</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>druid-spring-boot-actuator-starter</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
@@ -239,20 +213,9 @@
                 <version>${pagehelper.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>typehandlers-encrypt</artifactId>
-                <version>${typehandlers-encrypt.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
                 <version>${mybatis-generator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>mybatis-generator-extension</artifactId>
-                <version>${mybatis-generator-extension.version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -314,16 +277,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>redisson-spring-boot-autoconfigure</artifactId>
-                <version>${redisson-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>redisson-spring-boot-starter</artifactId>
-                <version>${redisson-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
                 <version>${redisson.version}</version>
@@ -382,11 +335,6 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.drtrang</groupId>
-                <artifactId>copiers</artifactId>
-                <version>${copiers.version}</version>
             </dependency>
             <dependency>
                 <groupId>cglib</groupId>
@@ -585,14 +533,6 @@
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>${jacoco-maven-plugin.version}</version>
                         <inherited>true</inherited>
-                        <executions>
-                            <execution>
-                                <id>prepare-agent</id>
-                                <goals>
-                                    <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.eluder.coveralls</groupId>
@@ -621,9 +561,9 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <encoding>UTF-8</encoding>
-                            <charset>UTF-8</charset>
-                            <!-- 修复java8中生成javadoc失败的问题 -->
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                            <charset>${project.build.sourceEncoding}</charset>
+                            <!-- 修复 Java8 中生成 JavaDoc 失败的问题 -->
                             <additionalJOption>-Xdoclint:none</additionalJOption>
                         </configuration>
                     </plugin>
@@ -681,9 +621,9 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <encoding>UTF-8</encoding>
-                        <charset>UTF-8</charset>
-                        <!-- 修复java8中生成javadoc失败的问题 -->
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <charset>${project.build.sourceEncoding}</charset>
+                        <!-- 修复 Java8 中生成 JavaDoc 失败的问题 -->
                         <additionalJOption>-Xdoclint:none</additionalJOption>
                     </configuration>
                 </plugin>
@@ -720,36 +660,6 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.mybatis.generator</groupId>
-                    <artifactId>mybatis-generator-maven-plugin</artifactId>
-                    <version>${mybatis-generator.version}</version>
-                    <inherited>true</inherited>
-                    <configuration>
-                        <configurationFile>
-                            ${basedir}/src/main/resources/generator/generatorConfig.xml
-                        </configurationFile>
-                        <overwrite>true</overwrite>
-                        <verbose>true</verbose>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>mysql</groupId>
-                            <artifactId>mysql-connector-java</artifactId>
-                            <version>${mysql.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>tk.mybatis</groupId>
-                            <artifactId>mapper</artifactId>
-                            <version>${mapper.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.github.drtrang</groupId>
-                            <artifactId>mybatis-generator-extension</artifactId>
-                            <version>${mybatis-generator-extension.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
                     <groupId>org.eluder.coveralls</groupId>
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>${coveralls-maven-plugin.version}</version>
@@ -773,14 +683,6 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>prepare-agent</id>
-                            <goals>
-                                <goal>prepare-agent</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
@@ -790,8 +692,8 @@
                         <archetypeGroupId>${project.groupId}</archetypeGroupId>
                         <archetypeArtifactId>${project.artifactId}</archetypeArtifactId>
                         <archetypeVersion>${project.version}</archetypeVersion>
-                        <encoding>UTF-8</encoding>
-                        <defaultEncoding>UTF-8</defaultEncoding>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <defaultEncoding>${project.build.sourceEncoding}</defaultEncoding>
                     </configuration>
                 </plugin>
             </plugins>
@@ -833,6 +735,8 @@
                 <inherited>true</inherited>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <includeEmptyDirs>true</includeEmptyDirs>
+                    <addDefaultExcludes>false</addDefaultExcludes>
                     <detail>true</detail>
                 </configuration>
             </plugin>
@@ -846,6 +750,7 @@
                     <target>${java.version}</target>
                     <compilerArgument>-parameters</compilerArgument>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
+                    <verbose>true</verbose>
                 </configuration>
             </plugin>
             <plugin>
@@ -855,12 +760,16 @@
                 <configuration>
                     <skip>true</skip>
                     <skipTests>true</skipTests>
+                    <detail>true</detail>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
                 <inherited>true</inherited>
+                <configuration>
+                    <skipIfEmpty>true</skipIfEmpty>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
