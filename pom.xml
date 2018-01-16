@@ -523,6 +523,7 @@
                         <configuration>
                             <skip>false</skip>
                             <skipTests>false</skipTests>
+                            <detail>true</detail>
                             <includes>
                                 <include>**/test/coveralls/*.java</include>
                             </includes>
@@ -533,6 +534,14 @@
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>${jacoco-maven-plugin.version}</version>
                         <inherited>true</inherited>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.eluder.coveralls</groupId>
@@ -562,6 +571,7 @@
                         </executions>
                         <configuration>
                             <encoding>${project.build.sourceEncoding}</encoding>
+                            <docencoding>${project.build.sourceEncoding}</docencoding>
                             <charset>${project.build.sourceEncoding}</charset>
                             <!-- 修复 Java8 中生成 JavaDoc 失败的问题 -->
                             <additionalJOption>-Xdoclint:none</additionalJOption>
@@ -622,6 +632,7 @@
                     </executions>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <docencoding>${project.build.sourceEncoding}</docencoding>
                         <charset>${project.build.sourceEncoding}</charset>
                         <!-- 修复 Java8 中生成 JavaDoc 失败的问题 -->
                         <additionalJOption>-Xdoclint:none</additionalJOption>
@@ -664,6 +675,9 @@
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>${coveralls-maven-plugin.version}</version>
                     <inherited>true</inherited>
+                    <configuration>
+                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -671,6 +685,7 @@
                     <version>${cobertura-maven-plugin.version}</version>
                     <inherited>true</inherited>
                     <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
                         <format>xml</format>
                         <maxmem>256m</maxmem>
                         <aggregate>true</aggregate>
@@ -683,6 +698,10 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
+                    <configuration>
+                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                        <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
@@ -723,6 +742,12 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
                 <inherited>true</inherited>
+                <configuration>
+                    <detail>true</detail>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+                    <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -750,7 +775,8 @@
                     <target>${java.version}</target>
                     <compilerArgument>-parameters</compilerArgument>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
-                    <verbose>true</verbose>
+                    <detail>true</detail>
+                    <!--<verbose>true</verbose>-->
                 </configuration>
             </plugin>
             <plugin>
