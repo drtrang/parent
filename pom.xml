@@ -11,7 +11,7 @@
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -63,8 +63,8 @@
         <commons-validator.version>1.6</commons-validator.version>
         <druid.version>1.1.6</druid.version>
         <dubbo.version>2.6.0</dubbo.version>
-        <easypoi.version>2.4.0</easypoi.version>
-        <fastjson.version>1.2.44</fastjson.version>
+        <easypoi.version>3.0.3</easypoi.version>
+        <fastjson.version>1.2.45</fastjson.version>
         <fst.version>2.57</fst.version>
         <guava.version>23.6-jre</guava.version>
         <httpclient.version>4.5.4</httpclient.version>
@@ -97,6 +97,7 @@
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
         <spring-kafka.version>2.1.1.RELEASE</spring-kafka.version>
+        <streamex.version>0.6.6</streamex.version>
         <swagger2.version>2.8.0</swagger2.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
@@ -347,6 +348,11 @@
                 <version>${asm.version}</version>
             </dependency>
             <dependency>
+                <groupId>one.util</groupId>
+                <artifactId>streamex</artifactId>
+                <version>${streamex.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
@@ -434,13 +440,36 @@
                 <version>${pdfbox.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jeecg</groupId>
+                <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-annotation</artifactId>
                 <version>${easypoi.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jeecg</groupId>
+                <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-base</artifactId>
+                <version>${easypoi.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.validation</groupId>
+                        <artifactId>validation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi-ooxml</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi-ooxml-schemas</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi</artifactId>
                 <version>${easypoi.version}</version>
                 <exclusions>
                     <exclusion>
@@ -773,7 +802,6 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <compilerArgument>-parameters</compilerArgument>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
                     <detail>true</detail>
                     <!--<verbose>true</verbose>-->
