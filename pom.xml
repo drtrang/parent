@@ -11,7 +11,7 @@
 
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>parent</name>
@@ -65,6 +65,7 @@
         <dubbo.version>2.6.0</dubbo.version>
         <easypoi.version>3.0.3</easypoi.version>
         <fastjson.version>1.2.45</fastjson.version>
+        <fastutil.version>8.1.1</fastutil.version>
         <fst.version>2.57</fst.version>
         <guava.version>23.6-jre</guava.version>
         <httpclient.version>4.5.4</httpclient.version>
@@ -96,8 +97,9 @@
         <streamex.version>0.6.6</streamex.version>
         <swagger2.version>2.8.0</swagger2.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
+        <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
-        <xerces.version>2.11.0-22</xerces.version>
+        <xerces.version>2.11.0.SP5</xerces.version>
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.1</zxing.version>
         <!-- Maven 插件 -->
@@ -123,6 +125,21 @@
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
     </properties>
 
+    <!--
+        1. 日志：Slf4j、LogBack
+        2. JSON 解析：Jackson、Gson、FastJson
+        3. 单元测试：JUnit、Mockito
+        4. 通用类库：Apache Commons、Guava
+        5. HTTP：Apache HttpClient、HttpCore
+        6：XML 解析：Xerces2, JAXB, JAXP, Dom4j, Xstream
+        7. Excel 读写：Apache POI
+        8. PDF 读写：iText、PDFBox
+        9. 字节码库：Javassist、Cglib
+        10. 集合类库：Apache Commons Collections、Goldman Sachs Collections、Guava 、Trove、FastUtil
+        11. 邮件：Apache Commons Email、javax.mail
+        12. HTML 解析：JSoup
+        13. 加密：Apache Commons Codec、Guava
+    -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -348,36 +365,41 @@
                 <artifactId>streamex</artifactId>
                 <version>${streamex.version}</version>
             </dependency>
+            <!-- JSON 解析 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- 二维码 -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.version}</version>
+            </dependency>
+            <!-- CSV -->
+            <dependency>
+                <groupId>com.univocity</groupId>
+                <artifactId>univocity-parsers</artifactId>
+                <version>${univocity-parsers.version}</version>
+            </dependency>
+            <!-- 图片剪裁 -->
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
+            <!-- 通用类库 -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>jsr305</artifactId>
                         <groupId>com.google.code.findbugs</groupId>
+                        <artifactId>jsr305</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.zxing</groupId>
-                <artifactId>core</artifactId>
-                <version>${zxing.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.univocity</groupId>
-                <artifactId>univocity-parsers</artifactId>
-                <version>${univocity-parsers.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.coobird</groupId>
-                <artifactId>thumbnailator</artifactId>
-                <version>${thumbnailator.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -400,8 +422,8 @@
                 <version>${commons-digester3.version}</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>cglib</artifactId>
                         <groupId>cglib</groupId>
+                        <artifactId>cglib</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -420,6 +442,18 @@
                 <artifactId>commons-validator</artifactId>
                 <version>${commons-validator.version}</version>
             </dependency>
+            <!-- 集合 -->
+            <dependency>
+                <groupId>net.sf.trove4j</groupId>
+                <artifactId>trove4j</artifactId>
+                <version>${trove4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.unimi.dsi</groupId>
+                <artifactId>fastutil</artifactId>
+                <version>${fastutil.version}</version>
+            </dependency>
+            <!-- HTTP -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
@@ -431,10 +465,28 @@
                 <version>${httpclient.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore-nio</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+            <!-- XML 解析 -->
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${xerces.version}</version>
+            </dependency>
+            <!-- PDF 读写 -->
+            <dependency>
                 <groupId>org.apache.pdfbox</groupId>
                 <artifactId>pdfbox</artifactId>
                 <version>${pdfbox.version}</version>
             </dependency>
+            <!-- Office 读写 -->
             <dependency>
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-annotation</artifactId>
