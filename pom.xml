@@ -4,7 +4,7 @@
     <!-- 声明项目描述符遵循的 POM 模型版本-->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 声明父项目的坐标，继承其 dependencies、plugins、properties 等属性 -->
+    <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 不会继承 -->
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
@@ -65,10 +65,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- 基础依赖 -->
-        <!--<asm.version>6.0</asm.version>-->
         <asm.version>5.2</asm.version>
+        <!--<asm.version>6.0</asm.version>-->
         <automon.version>1.0.2</automon.version>
         <cglib.version>3.2.5</cglib.version>
+        <!--<cglib.version>3.2.6</cglib.version>-->
         <chronicle-map.version>3.14.5</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-compress.version>1.15</commons-compress.version>
@@ -89,7 +90,7 @@
         <fst.version>2.57</fst.version>
         <guava.version>23.6-jre</guava.version>
         <hppc.version>0.7.3</hppc.version>
-        <httpclient.version>4.5.4</httpclient.version>
+        <httpclient.version>4.5.5</httpclient.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <javasimon.version>4.1.3</javasimon.version>
         <junit-params.version>1.1.1</junit-params.version>
@@ -111,8 +112,8 @@
         <poi.version>3.17</poi.version>
         <quartz.version>2.3.0</quartz.version>
         <redisson.version>3.5.7</redisson.version>
-        <rxjava.version>2.1.8</rxjava.version>
-        <sharding-jdbc.version>2.0.1</sharding-jdbc.version>
+        <rxjava.version>2.1.9</rxjava.version>
+        <sharding-jdbc.version>2.0.2</sharding-jdbc.version>
         <shiro.version>1.4.0</shiro.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
@@ -128,9 +129,10 @@
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.1</zxing.version>
         <!-- Maven 插件 -->
-        <build-helper-maven-plugin.version>3.0</build-helper-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
         <maven-archetype-plugin.version>3.0.1</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
@@ -146,10 +148,10 @@
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
-        <maven-site-plugin.version>3.6</maven-site-plugin.version>
+        <maven-site-plugin.version>3.7</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-        <maven-war-plugin.version>3.2</maven-war-plugin.version>
+        <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
     </properties>
 
@@ -826,17 +828,12 @@
                     <version>${build-helper-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
                     <configuration>
                         <warName>${project.artifactId}</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>versions-maven-plugin</artifactId>
-                    <version>${versions-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-javadoc-plugin</artifactId>
@@ -859,14 +856,13 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${maven-assembly-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.6.0</version>
+                    <version>${exec-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-gpg-plugin</artifactId>
@@ -1009,6 +1005,11 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>${maven-clean-plugin.version}</version>
             </plugin>
@@ -1037,7 +1038,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <!-- 跳过整个 test 阶段，包括编译 -->
                     <skip>true</skip>
+                    <!-- 跳过执行测试用例 -->
                     <skipTests>true</skipTests>
                 </configuration>
                 <dependencies>
