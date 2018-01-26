@@ -1,45 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 声明项目描述符遵循的 POM 模型版本-->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 声明父项目的坐标，继承其 dependencies、plugins、properties 等属性 -->
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
         <version>Brussels-SR6</version>
     </parent>
 
+    <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
     <version>1.0.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <!-- 项目描述 -->
     <name>parent</name>
     <description>
         Parent pom providing dependency and plugin management for applications built with Maven
     </description>
     <url>https://github.com/drtrang/parent</url>
 
+    <inceptionYear>2017</inceptionYear>
+
+    <!-- 开发者信息 -->
+    <developers>
+        <developer>
+            <id>trang</id>
+            <name>trang</name>
+            <email>donghao.l@hotmail.com</email>
+            <timezone>+8</timezone>
+            <url>http://blog.trang.space/</url>
+        </developer>
+    </developers>
+
+    <!-- 许可信息 -->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>https://github.com/drtrang/parent/blob/master/LICENSE</url>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
+    <!-- 源码管理 -->
     <scm>
-        <url>https://github.com/drtrang/parent.git</url>
         <connection>scm:git:https://github.com/drtrang/parent.git</connection>
-        <developerConnection>scm:git:https://github.com/drtrang</developerConnection>
-        <tag>HEAD</tag>
+        <developerConnection>scm:git:git@github.com:drtrang/parent.git</developerConnection>
+        <url>https://github.com/drtrang/parent.git</url>
     </scm>
 
-    <developers>
-        <developer>
-            <name>trang</name>
-            <email>donghao.l@hotmail.com</email>
-        </developer>
-    </developers>
+    <!-- 问题管理 -->
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/drtrang/parent/issues</url>
+    </issueManagement>
 
     <properties>
         <!-- 工程参数 -->
@@ -49,7 +67,9 @@
         <!-- 基础依赖 -->
         <!--<asm.version>6.0</asm.version>-->
         <asm.version>5.2</asm.version>
+        <automon.version>1.0.2</automon.version>
         <cglib.version>3.2.5</cglib.version>
+        <chronicle-map.version>3.14.5</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-compress.version>1.15</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
@@ -68,10 +88,12 @@
         <fastutil.version>8.1.1</fastutil.version>
         <fst.version>2.57</fst.version>
         <guava.version>23.6-jre</guava.version>
+        <hppc.version>0.7.3</hppc.version>
         <httpclient.version>4.5.4</httpclient.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <javasimon.version>4.1.3</javasimon.version>
         <junit-params.version>1.1.1</junit-params.version>
+        <leakcanary.version>1.5.4</leakcanary.version>
         <logback-access-spring-boot-starter.version>2.7.0</logback-access-spring-boot-starter.version>
         <logback.version>1.2.3</logback.version>
         <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
@@ -96,7 +118,9 @@
         <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
         <spring-kafka.version>2.1.1.RELEASE</spring-kafka.version>
         <streamex.version>0.6.6</streamex.version>
+        <strman.version>0.4.0</strman.version>
         <swagger2.version>2.8.0</swagger2.version>
+        <tablesaw.version>0.11.4</tablesaw.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
@@ -104,6 +128,7 @@
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.1</zxing.version>
         <!-- Maven 插件 -->
+        <build-helper-maven-plugin.version>3.0</build-helper-maven-plugin.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
@@ -124,6 +149,8 @@
         <maven-site-plugin.version>3.6</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <maven-war-plugin.version>3.2</maven-war-plugin.version>
+        <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
     </properties>
 
     <!--
@@ -141,6 +168,7 @@
         12. HTML 解析：JSoup
         13. 加密：Apache Commons Codec、Guava
     -->
+    <!-- 项目依赖管理 -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -404,11 +432,6 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
-                <artifactId>commons-collections4</artifactId>
-                <version>${commons-collections4.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>${commons-compress.version}</version>
             </dependency>
@@ -443,7 +466,18 @@
                 <artifactId>commons-validator</artifactId>
                 <version>${commons-validator.version}</version>
             </dependency>
+            <!-- 字符串 -->
+            <dependency>
+                <groupId>com.shekhargulati</groupId>
+                <artifactId>strman</artifactId>
+                <version>${strman.version}</version>
+            </dependency>
             <!-- 集合 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
             <dependency>
                 <groupId>net.sf.trove4j</groupId>
                 <artifactId>trove4j</artifactId>
@@ -453,6 +487,42 @@
                 <groupId>it.unimi.dsi</groupId>
                 <artifactId>fastutil</artifactId>
                 <version>${fastutil.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.carrotsearch</groupId>
+                <artifactId>hppc</artifactId>
+                <version>${hppc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.openhft</groupId>
+                <artifactId>chronicle-map</artifactId>
+                <version>${chronicle-map.version}</version>
+            </dependency>
+            <!-- 数据处理 -->
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-core</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-plot</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-smile</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-beakerx</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-aggregate</artifactId>
+                <version>${tablesaw.version}</version>
             </dependency>
             <!-- HTTP -->
             <dependency>
@@ -539,6 +609,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <!-- 性能测试 -->
             <dependency>
                 <groupId>org.javasimon</groupId>
                 <artifactId>javasimon-core</artifactId>
@@ -563,6 +634,32 @@
                 <groupId>org.javasimon</groupId>
                 <artifactId>javasimon-console-webapp</artifactId>
                 <version>${javasimon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.automon</groupId>
+                <artifactId>automon</artifactId>
+                <version>${automon.version}</version>
+            </dependency>
+            <!-- 内存泄漏 -->
+            <dependency>
+                <groupId>com.squareup.leakcanary</groupId>
+                <artifactId>leakcanary-android</artifactId>
+                <version>${leakcanary.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.leakcanary</groupId>
+                <artifactId>leakcanary-android-no-op</artifactId>
+                <version>${leakcanary.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.leakcanary</groupId>
+                <artifactId>leakcanary-watcher</artifactId>
+                <version>${leakcanary.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.leakcanary</groupId>
+                <artifactId>leakcanary-analyzer</artifactId>
+                <version>${leakcanary.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -597,6 +694,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- 项目发布管理 -->
     <distributionManagement>
         <snapshotRepository>
             <id>oss</id>
@@ -608,6 +706,7 @@
         </repository>
     </distributionManagement>
 
+    <!-- 项目 Profile 信息 -->
     <profiles>
         <profile>
             <id>dev</id>
@@ -622,21 +721,25 @@
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${maven-surefire-plugin.version}</version>
-                        <inherited>true</inherited>
                         <configuration>
                             <skip>false</skip>
                             <skipTests>false</skipTests>
-                            <detail>true</detail>
                             <includes>
                                 <include>**/test/coveralls/*.java</include>
                             </includes>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.maven.surefire</groupId>
+                                <artifactId>surefire-junit47</artifactId>
+                                <version>${maven-surefire-plugin.version}</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>${jacoco-maven-plugin.version}</version>
-                        <inherited>true</inherited>
                         <executions>
                             <execution>
                                 <id>prepare-agent</id>
@@ -650,7 +753,6 @@
                         <groupId>org.eluder.coveralls</groupId>
                         <artifactId>coveralls-maven-plugin</artifactId>
                         <version>${coveralls-maven-plugin.version}</version>
-                        <inherited>true</inherited>
                     </plugin>
                 </plugins>
             </build>
@@ -662,7 +764,6 @@
                     <plugin>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven-javadoc-plugin.version}</version>
-                        <inherited>true</inherited>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -683,7 +784,6 @@
                     <plugin>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${maven-gpg-plugin.version}</version>
-                        <inherited>true</inherited>
                         <executions>
                             <execution>
                                 <phase>verify</phase>
@@ -696,7 +796,6 @@
                     <plugin>
                         <artifactId>maven-deploy-plugin</artifactId>
                         <version>${maven-deploy-plugin.version}</version>
-                        <inherited>true</inherited>
                         <configuration>
                             <updateReleaseInfo>true</updateReleaseInfo>
                         </configuration>
@@ -704,12 +803,11 @@
                     <plugin>
                         <artifactId>maven-release-plugin</artifactId>
                         <version>${maven-release-plugin.version}</version>
-                        <inherited>true</inherited>
                         <configuration>
                             <autoVersionSubmodules>true</autoVersionSubmodules>
                             <useReleaseProfile>true</useReleaseProfile>
                             <releaseProfiles>release</releaseProfiles>
-                            <goals>deploy</goals>
+                            <pushChanges>true</pushChanges>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -717,13 +815,32 @@
         </profile>
     </profiles>
 
+    <!-- 项目构建信息 -->
     <build>
+        <!-- 项目插件管理 -->
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <warName>${project.artifactId}</warName>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${maven-javadoc-plugin.version}</version>
-                    <inherited>true</inherited>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -742,9 +859,18 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                </plugin>
+                <plugin>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
-                    <inherited>true</inherited>
                     <executions>
                         <execution>
                             <phase>verify</phase>
@@ -757,7 +883,6 @@
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${maven-deploy-plugin.version}</version>
-                    <inherited>true</inherited>
                     <configuration>
                         <updateReleaseInfo>true</updateReleaseInfo>
                     </configuration>
@@ -765,19 +890,17 @@
                 <plugin>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven-release-plugin.version}</version>
-                    <inherited>true</inherited>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useReleaseProfile>true</useReleaseProfile>
                         <releaseProfiles>release</releaseProfiles>
-                        <goals>deploy</goals>
+                        <pushChanges>true</pushChanges>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.eluder.coveralls</groupId>
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>${coveralls-maven-plugin.version}</version>
-                    <inherited>true</inherited>
                     <configuration>
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     </configuration>
@@ -786,7 +909,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>cobertura-maven-plugin</artifactId>
                     <version>${cobertura-maven-plugin.version}</version>
-                    <inherited>true</inherited>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <format>xml</format>
@@ -809,7 +931,6 @@
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>${maven-archetype-plugin.version}</version>
-                    <inherited>true</inherited>
                     <configuration>
                         <archetypeGroupId>${project.groupId}</archetypeGroupId>
                         <archetypeArtifactId>${project.artifactId}</archetypeArtifactId>
@@ -820,23 +941,60 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <!-- 项目插件 -->
         <plugins>
+            <!-- 规则检查插件，避免被依赖的依赖引入过期的 jar 包 -->
             <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${maven-enforcer-plugin.version}</version>
-                <inherited>true</inherited>
                 <executions>
                     <execution>
-                        <id>enforce-maven</id>
+                        <id>enforce-banned-dependencies</id>
                         <goals>
                             <goal>enforce</goal>
                         </goals>
                         <configuration>
                             <rules>
+                                <!-- 检查是否有符合禁止条件的依赖，如果有则失败 -->
+                                <bannedDependencies>
+                                    <!-- 是否查找传递依赖 -->
+                                    <searchTransitive>true</searchTransitive>
+                                    <!-- 被禁止的依赖，表达式规则：groupId[:artifactId][:version][:type][:scope][:classifier] -->
+                                    <excludes>
+                                        <exclude>>org.slf4j:*</exclude>
+                                        <exclude>aspectj:aspectj*</exclude>
+                                        <exclude>org.springframework</exclude>
+                                        <exclude>org.springframework.boot</exclude>
+                                    </excludes>
+                                    <!-- 例外依赖，只能包含 excludes 中已有的依赖 -->
+                                    <includes>
+                                        <!-- 当 groupId 为 org.springframework 时，只能使用其 4.0 版本的 jar 包 -->
+                                        <include>>org.slf4j:slf4j-api</include>
+                                        <include>>org.slf4j:*-slf4j</include>
+                                        <include>org.springframework:*:4.*</include>
+                                        <include>org.springframework.boot:*:1.5.*</include>
+                                    </includes>
+                                </bannedDependencies>
+                                <!-- 检查 Maven 版本，要求在 3.0.3 以上 -->
                                 <requireMavenVersion>
-                                    <version>3.0</version>
+                                    <version>3.0.3</version>
                                 </requireMavenVersion>
+                                <!-- 检查 JDK 版本，要求在 1.6 以上 -->
+                                <requireJavaVersion>
+                                    <version>1.6</version>
+                                </requireJavaVersion>
+                                <!-- 检查依赖的查找规则，要求依赖的版本等于或高于所有传递依赖 -->
+                                <requireUpperBoundDeps>
+                                    <!-- 是否根据时间戳比较 SNAPSHOT 版本  -->
+                                    <uniqueVersions>true</uniqueVersions>
+                                    <!-- 例外的 jar 包 -->
+                                    <excludes>
+                                        <exclude>com.google.guava:guava</exclude>
+                                    </excludes>
+                                </requireUpperBoundDeps>
                             </rules>
+                            <fail>true</fail>
+                            <failFast>true</failFast>
                         </configuration>
                     </execution>
                 </executions>
@@ -844,9 +1002,7 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
-                <inherited>true</inherited>
                 <configuration>
-                    <detail>true</detail>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
                     <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
@@ -855,46 +1011,46 @@
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>${maven-clean-plugin.version}</version>
-                <inherited>true</inherited>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${maven-resources-plugin.version}</version>
-                <inherited>true</inherited>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <includeEmptyDirs>true</includeEmptyDirs>
                     <addDefaultExcludes>false</addDefaultExcludes>
-                    <detail>true</detail>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
-                <inherited>true</inherited>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
-                    <detail>true</detail>
                     <!--<verbose>true</verbose>-->
                 </configuration>
             </plugin>
+            <!-- 使用支持分组测试的 surefire-junit47 driver -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <inherited>true</inherited>
                 <configuration>
                     <skip>true</skip>
                     <skipTests>true</skipTests>
-                    <detail>true</detail>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${maven-surefire-plugin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
-                <inherited>true</inherited>
                 <configuration>
                     <skipIfEmpty>true</skipIfEmpty>
                 </configuration>
@@ -902,7 +1058,6 @@
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven-source-plugin.version}</version>
-                <inherited>true</inherited>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -916,7 +1071,6 @@
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>${maven-install-plugin.version}</version>
-                <inherited>true</inherited>
             </plugin>
         </plugins>
     </build>
