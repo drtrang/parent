@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 声明项目描述符遵循的 POM 模型版本-->
+    <!-- 声明项目描述符遵循的 POM 模型版本 -->
     <modelVersion>4.0.0</modelVersion>
 
     <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 不会继承 -->
@@ -27,6 +27,11 @@
     <inceptionYear>2017</inceptionYear>
 
     <!-- 开发者信息 -->
+    <organization>
+        <name>trang</name>
+        <url>http://blog.trang.space/</url>
+    </organization>
+
     <developers>
         <developer>
             <id>trang</id>
@@ -88,9 +93,10 @@
         <fastjson.version>1.2.45</fastjson.version>
         <fastutil.version>8.1.1</fastutil.version>
         <fst.version>2.57</fst.version>
-        <guava.version>23.6-jre</guava.version>
+        <guava.version>24.0-jre</guava.version>
         <hppc.version>0.7.3</hppc.version>
         <httpclient.version>4.5.5</httpclient.version>
+        <httpcore.version>4.4.9</httpcore.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <javasimon.version>4.1.3</javasimon.version>
         <junit-params.version>1.1.1</junit-params.version>
@@ -111,13 +117,13 @@
         <pdfbox.version>2.0.8</pdfbox.version>
         <poi.version>3.17</poi.version>
         <quartz.version>2.3.0</quartz.version>
-        <redisson.version>3.5.7</redisson.version>
+        <redisson.version>3.6.0</redisson.version>
         <rxjava.version>2.1.9</rxjava.version>
         <sharding-jdbc.version>2.0.2</sharding-jdbc.version>
         <shiro.version>1.4.0</shiro.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-autoconfigure.version>1.0.3</spring-boot-autoconfigure.version>
-        <spring-kafka.version>2.1.1.RELEASE</spring-kafka.version>
+        <spring-kafka.version>2.1.2.RELEASE</spring-kafka.version>
         <streamex.version>0.6.6</streamex.version>
         <strman.version>0.4.0</strman.version>
         <swagger2.version>2.8.0</swagger2.version>
@@ -125,9 +131,9 @@
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.5.9</univocity-parsers.version>
-        <xerces.version>2.11.0.SP5</xerces.version>
+        <xerces.version>2.11.0</xerces.version>
         <zkclient.version>0.10</zkclient.version>
-        <zxing.version>3.3.1</zxing.version>
+        <zxing.version>3.3.2</zxing.version>
         <!-- Maven 插件 -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
@@ -590,26 +596,8 @@
             </dependency>
             <dependency>
                 <groupId>cn.afterturn</groupId>
-                <artifactId>easypoi</artifactId>
+                <artifactId>easypoi-web</artifactId>
                 <version>${easypoi.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.validation</groupId>
-                        <artifactId>validation-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.poi</groupId>
-                        <artifactId>poi</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.poi</groupId>
-                        <artifactId>poi-ooxml</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.poi</groupId>
-                        <artifactId>poi-ooxml-schemas</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <!-- 性能测试 -->
             <dependency>
@@ -633,11 +621,6 @@
                 <version>${javasimon.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.javasimon</groupId>
-                <artifactId>javasimon-console-webapp</artifactId>
-                <version>${javasimon.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.automon</groupId>
                 <artifactId>automon</artifactId>
                 <version>${automon.version}</version>
@@ -645,22 +628,7 @@
             <!-- 内存泄漏 -->
             <dependency>
                 <groupId>com.squareup.leakcanary</groupId>
-                <artifactId>leakcanary-android</artifactId>
-                <version>${leakcanary.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.leakcanary</groupId>
-                <artifactId>leakcanary-android-no-op</artifactId>
-                <version>${leakcanary.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.leakcanary</groupId>
                 <artifactId>leakcanary-watcher</artifactId>
-                <version>${leakcanary.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.leakcanary</groupId>
-                <artifactId>leakcanary-analyzer</artifactId>
                 <version>${leakcanary.version}</version>
             </dependency>
             <dependency>
@@ -708,18 +676,21 @@
         </repository>
     </distributionManagement>
 
-    <!-- 项目 Profile 信息 -->
+    <!-- 项目 profile 信息 -->
     <profiles>
+        <!-- 默认 profile -->
         <profile>
             <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
+        <!-- 测试 profile -->
         <profile>
             <id>coveralls</id>
             <build>
                 <plugins>
+                    <!-- Junit 测试 -->
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${maven-surefire-plugin.version}</version>
@@ -730,18 +701,15 @@
                                 <include>**/test/coveralls/*.java</include>
                             </includes>
                         </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.apache.maven.surefire</groupId>
-                                <artifactId>surefire-junit47</artifactId>
-                                <version>${maven-surefire-plugin.version}</version>
-                            </dependency>
-                        </dependencies>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>${jacoco-maven-plugin.version}</version>
+                        <configuration>
+                            <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                            <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>prepare-agent</id>
@@ -755,6 +723,9 @@
                         <groupId>org.eluder.coveralls</groupId>
                         <artifactId>coveralls-maven-plugin</artifactId>
                         <version>${coveralls-maven-plugin.version}</version>
+                        <configuration>
+                            <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -923,6 +894,14 @@
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
@@ -1033,7 +1012,6 @@
                     <!--<verbose>true</verbose>-->
                 </configuration>
             </plugin>
-            <!-- 使用支持分组测试的 surefire-junit47 driver -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
@@ -1043,13 +1021,6 @@
                     <!-- 跳过执行测试用例 -->
                     <skipTests>true</skipTests>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>${maven-surefire-plugin.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
