@@ -105,6 +105,7 @@
         <mapper.version>3.5.2</mapper.version>
         <!-- 升级到 1.3.6 版本后出现子 Module 依赖找不到的问题 -->
         <mybatis-generator.version>1.3.5</mybatis-generator.version>
+        <mybatis-generator-extension.version>0.0.5</mybatis-generator-extension.version>
         <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <mybatis.version>3.4.5</mybatis.version>
@@ -795,10 +796,91 @@
         <!-- 项目插件管理 -->
         <pluginManagement>
             <plugins>
+                <!-- 规则检查插件，避免被依赖的依赖引入过期的 jar 包 -->
+                <plugin>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-banned-dependencies</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <!-- 检查是否有符合禁止条件的依赖，如果有则失败 -->
+                                    <bannedDependencies>
+                                        <!-- 是否查找传递依赖 -->
+                                        <searchTransitive>true</searchTransitive>
+                                        <!-- 被禁止的依赖，表达式规则：groupId[:artifactId][:version][:type][:scope][:classifier] -->
+                                        <excludes>
+                                            <exclude>org.slf4j:*</exclude>
+                                            <exclude>aspectj:aspectj*</exclude>
+                                            <exclude>org.springframework</exclude>
+                                            <exclude>org.springframework.boot</exclude>
+                                        </excludes>
+                                        <!-- 例外依赖，只能包含 excludes 中已有的依赖 -->
+                                        <includes>
+                                            <!-- 当 groupId 为 org.springframework 时，只能使用其 4.0 版本的 jar 包 -->
+                                            <include>org.slf4j:slf4j-api</include>
+                                            <include>org.slf4j:*-slf4j</include>
+                                            <include>org.springframework:*:4.*</include>
+                                            <include>org.springframework.boot:*:1.5.*</include>
+                                        </includes>
+                                    </bannedDependencies>
+                                    <!-- 检查 Maven 版本，要求在 3.0.3 以上 -->
+                                    <requireMavenVersion>
+                                        <version>3.0.3</version>
+                                    </requireMavenVersion>
+                                    <!-- 检查 JDK 版本，要求在 1.6 以上 -->
+                                    <requireJavaVersion>
+                                        <version>1.6</version>
+                                    </requireJavaVersion>
+                                </rules>
+                                <fail>true</fail>
+                                <failFast>true</failFast>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>${mybatis-generator.version}</version>
+                    <configuration>
+                        <configurationFile>
+                            ${basedir}/src/main/resources/generator/generatorConfig.xml
+                        </configurationFile>
+                        <overwrite>true</overwrite>
+                        <verbose>true</verbose>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>tk.mybatis</groupId>
+                            <artifactId>mapper</artifactId>
+                            <version>${mapper.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.github.drtrang</groupId>
+                            <artifactId>mybatis-generator-extension</artifactId>
+                            <version>${mybatis-generator-extension.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.freemarker</groupId>
+                            <artifactId>freemarker</artifactId>
+                            <version>${freemarker.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
@@ -920,53 +1002,6 @@
         </pluginManagement>
         <!-- 项目插件 -->
         <plugins>
-            <!-- 规则检查插件，避免被依赖的依赖引入过期的 jar 包 -->
-            <plugin>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${maven-enforcer-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>enforce-banned-dependencies</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <!-- 检查是否有符合禁止条件的依赖，如果有则失败 -->
-                                <bannedDependencies>
-                                    <!-- 是否查找传递依赖 -->
-                                    <searchTransitive>true</searchTransitive>
-                                    <!-- 被禁止的依赖，表达式规则：groupId[:artifactId][:version][:type][:scope][:classifier] -->
-                                    <excludes>
-                                        <exclude>org.slf4j:*</exclude>
-                                        <exclude>aspectj:aspectj*</exclude>
-                                        <exclude>org.springframework</exclude>
-                                        <exclude>org.springframework.boot</exclude>
-                                    </excludes>
-                                    <!-- 例外依赖，只能包含 excludes 中已有的依赖 -->
-                                    <includes>
-                                        <!-- 当 groupId 为 org.springframework 时，只能使用其 4.0 版本的 jar 包 -->
-                                        <include>org.slf4j:slf4j-api</include>
-                                        <include>org.slf4j:*-slf4j</include>
-                                        <include>org.springframework:*:4.*</include>
-                                        <include>org.springframework.boot:*:1.5.*</include>
-                                    </includes>
-                                </bannedDependencies>
-                                <!-- 检查 Maven 版本，要求在 3.0.3 以上 -->
-                                <requireMavenVersion>
-                                    <version>3.0.3</version>
-                                </requireMavenVersion>
-                                <!-- 检查 JDK 版本，要求在 1.6 以上 -->
-                                <requireJavaVersion>
-                                    <version>1.6</version>
-                                </requireJavaVersion>
-                            </rules>
-                            <fail>true</fail>
-                            <failFast>true</failFast>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
