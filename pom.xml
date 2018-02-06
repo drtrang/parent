@@ -56,7 +56,7 @@
     <scm>
         <connection>scm:git:https://github.com/drtrang/parent.git</connection>
         <developerConnection>scm:git:git@github.com:drtrang/parent.git</developerConnection>
-        <url>https://github.com/drtrang/parent.git</url>
+        <url>https://github.com/drtrang/parent</url>
     </scm>
 
     <!-- 问题管理 -->
