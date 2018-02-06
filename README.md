@@ -11,7 +11,7 @@
 ```xml
 <dependency>
     <groupId>com.github.drtrang</groupId>
-    <artifactId>druid-spring-boot-starter</artifactId>
-    <version>1.1.7</version>
+    <artifactId>parent</artifactId>
+    <version>1.1.0</version>
 </dependency>
 ```
