@@ -9,9 +9,17 @@
 
 ## 依赖
 ```xml
+<!-- spring boot 1.x -->
 <dependency>
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
+</dependency>
+
+<!-- spring boot 2.x -->
+<dependency>
+    <groupId>com.github.drtrang</groupId>
+    <artifactId>parent2</artifactId>
+    <version>1.1.1</version>
 </dependency>
 ```
