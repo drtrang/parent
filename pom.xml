@@ -109,14 +109,14 @@
         <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <mybatis.version>3.4.5</mybatis.version>
-        <netty.version>4.1.21.Final</netty.version>
+        <netty.version>4.1.22.Final</netty.version>
         <okhttp3.version>3.10.0</okhttp3.version>
         <pagehelper.version>5.1.2</pagehelper.version>
         <pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
         <pdfbox.version>2.0.8</pdfbox.version>
         <poi.version>3.17</poi.version>
         <reactor.version>3.1.1.RELEASE</reactor.version>
-        <redisson.version>3.6.1</redisson.version>
+        <redisson.version>3.6.2</redisson.version>
         <rxjava.version>2.1.10</rxjava.version>
         <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
         <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
@@ -124,7 +124,7 @@
         <streamex.version>0.6.6</streamex.version>
         <strman.version>0.4.0</strman.version>
         <swagger2.version>2.8.0</swagger2.version>
-        <tablesaw.version>0.11.9</tablesaw.version>
+        <tablesaw.version>0.12.0</tablesaw.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.0</univocity-parsers.version>
@@ -153,7 +153,7 @@
         <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
         <maven-site-plugin.version>3.7</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
     </properties>
@@ -275,38 +275,10 @@
             <!-- netty -->
             <dependency>
                 <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
+                <artifactId>netty-bom</artifactId>
                 <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-buffer</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-codec</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-common</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-handler</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-transport-native-epoll</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-transport</artifactId>
-                <version>${netty.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <!-- zookeeper -->
             <dependency>
