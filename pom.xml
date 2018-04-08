@@ -96,6 +96,7 @@
         <easypoi.version>3.1.0</easypoi.version>
         <fastjson.version>1.2.47</fastjson.version>
         <fastutil.version>8.1.1</fastutil.version>
+        <freemarker.version>2.3.28</freemarker.version>
         <fst.version>2.57</fst.version>
         <guava.version>24.1-jre</guava.version>
         <hppc.version>0.7.3</hppc.version>
