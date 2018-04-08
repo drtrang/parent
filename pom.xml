@@ -6,15 +6,15 @@
 
     <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 不会继承 -->
     <parent>
-        <groupId>io.spring.platform</groupId>
-        <artifactId>platform-bom</artifactId>
-        <version>Brussels-SR7</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.11.RELEASE</version>
     </parent>
 
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -64,6 +64,11 @@
         <system>github</system>
         <url>https://github.com/drtrang/parent/issues</url>
     </issueManagement>
+
+    <!-- Maven 的版本条件 -->
+    <prerequisites>
+        <maven>3.0.3</maven>
+    </prerequisites>
 
     <!-- 自定义属性 -->
     <properties>
