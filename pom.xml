@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.11.RELEASE</version>
+        <version>1.5.12.RELEASE</version>
     </parent>
 
     <!-- 项目的 Maven 坐标 -->
@@ -80,7 +80,7 @@
         <asm.version>6.1.1</asm.version>
         <automon.version>1.0.2</automon.version>
         <cglib.version>3.2.6</cglib.version>
-        <chronicle-map.version>3.14.5</chronicle-map.version>
+        <chronicle-map.version>3.14.6</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-compress.version>1.16.1</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
@@ -98,11 +98,11 @@
         <fastutil.version>8.1.1</fastutil.version>
         <freemarker.version>2.3.28</freemarker.version>
         <fst.version>2.57</fst.version>
-        <guava.version>24.1-jre</guava.version>
+        <guava.version>25.0-jre</guava.version>
         <hppc.version>0.7.3</hppc.version>
         <httpclient.version>4.5.5</httpclient.version>
         <httpcore.version>4.4.9</httpcore.version>
-        <javax-persistence.version>1.0</javax-persistence.version>
+        <javax-persistence.version>1.0.2</javax-persistence.version>
         <javasimon.version>4.1.4</javasimon.version>
         <junit-params.version>1.1.1</junit-params.version>
         <leakcanary.version>1.5.4</leakcanary.version>
@@ -115,15 +115,15 @@
         <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
         <mybatis.version>3.4.6</mybatis.version>
-        <netty.version>4.1.22.Final</netty.version>
+        <netty.version>4.1.24.Final</netty.version>
         <okhttp3.version>3.10.0</okhttp3.version>
-        <pagehelper.version>5.1.2</pagehelper.version>
-        <pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
+        <pagehelper.version>5.1.4</pagehelper.version>
+        <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
         <pdfbox.version>2.0.9</pdfbox.version>
         <poi.version>3.17</poi.version>
         <reactor.version>3.1.1.RELEASE</reactor.version>
-        <redisson.version>3.6.4</redisson.version>
-        <rxjava.version>2.1.12</rxjava.version>
+        <redisson.version>3.6.5</redisson.version>
+        <rxjava.version>2.1.13</rxjava.version>
         <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
         <spring-boot.version>1.5.11.RELEASE</spring-boot.version>
         <spring-kafka.version>1.3.4.RELEASE</spring-kafka.version>
@@ -133,7 +133,7 @@
         <tablesaw.version>0.12.0</tablesaw.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
-        <univocity-parsers.version>2.6.1</univocity-parsers.version>
+        <univocity-parsers.version>2.6.3</univocity-parsers.version>
         <xerces.version>2.11.0</xerces.version>
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.2</zxing.version>
@@ -145,17 +145,17 @@
         <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
         <maven-archetype-plugin.version>3.0.1</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.1.0</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M1</maven-enforcer-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
         <maven-site-plugin.version>3.7</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
@@ -767,6 +767,8 @@
                             <useReleaseProfile>true</useReleaseProfile>
                             <releaseProfiles>release</releaseProfiles>
                             <pushChanges>true</pushChanges>
+                            <remoteTagging>true</remoteTagging>
+                            <tagNameFormat>v@{project.version}</tagNameFormat>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -871,6 +873,16 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
                     <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Implementation-Build>${buildNumber}</Implementation-Build>
+                                <Implementation-Timestamp>${timestamp}</Implementation-Timestamp>
+                                <Implementation-Branch>${scmBranch}</Implementation-Branch>
+                            </manifestEntries>
+                        </archive>
                         <warName>${project.artifactId}</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
@@ -1005,6 +1017,23 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${versions-maven-plugin.version}</version>
             </plugin>
@@ -1031,8 +1060,9 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <optimize>true</optimize>
+                    <parameters>true</parameters>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
-                    <!--<verbose>true</verbose>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -1051,6 +1081,16 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
                 <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build>${buildNumber}</Implementation-Build>
+                            <Implementation-Timestamp>${timestamp}</Implementation-Timestamp>
+                            <Implementation-Branch>${scmBranch}</Implementation-Branch>
+                        </manifestEntries>
+                    </archive>
                     <skipIfEmpty>true</skipIfEmpty>
                 </configuration>
             </plugin>
