@@ -14,7 +14,7 @@
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent2</artifactId>
-    <version>1.1.3-SNAPSHOT</version>
+    <version>1.1.3</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -65,11 +65,6 @@
         <url>https://github.com/drtrang/parent/issues</url>
     </issueManagement>
 
-    <!-- Maven 的版本条件 -->
-    <prerequisites>
-        <maven>3.0.3</maven>
-    </prerequisites>
-
     <!-- 自定义属性 -->
     <properties>
         <!-- 工程参数 -->
@@ -80,7 +75,7 @@
         <asm.version>6.1.1</asm.version>
         <automon.version>1.0.2</automon.version>
         <cglib.version>3.2.6</cglib.version>
-        <chronicle-map.version>3.14.5</chronicle-map.version>
+        <chronicle-map.version>3.14.6</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-compress.version>1.16.1</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
@@ -98,12 +93,13 @@
         <fastutil.version>8.1.1</fastutil.version>
         <freemarker.version>2.3.28</freemarker.version>
         <fst.version>2.57</fst.version>
-        <guava.version>24.1-jre</guava.version>
+        <guava.version>25.0-jre</guava.version>
         <hppc.version>0.7.3</hppc.version>
         <httpclient.version>4.5.5</httpclient.version>
         <httpcore.version>4.4.9</httpcore.version>
-        <javax-persistence.version>1.0</javax-persistence.version>
+        <javax-persistence.version>1.0.2</javax-persistence.version>
         <javasimon.version>4.1.4</javasimon.version>
+        <javassist.version>3.22.0-GA</javassist.version>
         <junit-params.version>1.1.1</junit-params.version>
         <leakcanary.version>1.5.4</leakcanary.version>
         <logback.version>1.2.3</logback.version>
@@ -115,17 +111,17 @@
         <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
         <mybatis.version>3.4.6</mybatis.version>
-        <netty.version>4.1.22.Final</netty.version>
+        <netty.version>4.1.24.Final</netty.version>
         <okhttp3.version>3.10.0</okhttp3.version>
-        <pagehelper.version>5.1.2</pagehelper.version>
-        <pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
+        <orika.version>1.5.2</orika.version>
+        <pagehelper.version>5.1.4</pagehelper.version>
+        <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
         <pdfbox.version>2.0.9</pdfbox.version>
         <poi.version>3.17</poi.version>
         <reactor.version>3.1.1.RELEASE</reactor.version>
-        <redisson.version>3.6.4</redisson.version>
-        <rxjava.version>2.1.12</rxjava.version>
+        <redisson.version>3.6.5</redisson.version>
+        <rxjava.version>2.1.13</rxjava.version>
         <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
-        <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
         <spring-kafka.version>2.1.5.RELEASE</spring-kafka.version>
         <streamex.version>0.6.6</streamex.version>
         <strman.version>0.4.0</strman.version>
@@ -133,29 +129,30 @@
         <tablesaw.version>0.12.0</tablesaw.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
-        <univocity-parsers.version>2.6.1</univocity-parsers.version>
+        <univocity-parsers.version>2.6.3</univocity-parsers.version>
         <xerces.version>2.11.0</xerces.version>
         <zkclient.version>0.10</zkclient.version>
         <zxing.version>3.3.2</zxing.version>
         <!-- Maven 插件 -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+        <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
         <maven-archetype-plugin.version>3.0.1</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.1.0</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M1</maven-enforcer-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
         <maven-site-plugin.version>3.7</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
@@ -370,6 +367,22 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <!-- bean 拷贝 -->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.javassist</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- 二维码 -->
             <dependency>
@@ -608,7 +621,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${project.parent.version}</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -767,6 +780,8 @@
                             <useReleaseProfile>true</useReleaseProfile>
                             <releaseProfiles>release</releaseProfiles>
                             <pushChanges>true</pushChanges>
+                            <remoteTagging>true</remoteTagging>
+                            <tagNameFormat>v@{project.version}</tagNameFormat>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -800,25 +815,21 @@
                                         <excludes>
                                             <exclude>org.slf4j:*</exclude>
                                             <exclude>aspectj:aspectj*</exclude>
-                                            <exclude>org.springframework</exclude>
-                                            <exclude>org.springframework.boot</exclude>
                                         </excludes>
                                         <!-- 例外依赖，只能包含 excludes 中已有的依赖 -->
                                         <includes>
                                             <!-- 当 groupId 为 org.springframework 时，只能使用其 4.0 版本的 jar 包 -->
                                             <include>org.slf4j:slf4j-api</include>
                                             <include>org.slf4j:*-slf4j</include>
-                                            <include>org.springframework:*:4.*</include>
-                                            <include>org.springframework.boot:*:1.5.*</include>
                                         </includes>
                                     </bannedDependencies>
                                     <!-- 检查 Maven 版本，要求在 3.0.3 以上 -->
                                     <requireMavenVersion>
                                         <version>3.0.3</version>
                                     </requireMavenVersion>
-                                    <!-- 检查 JDK 版本，要求在 1.6 以上 -->
+                                    <!-- 检查 JDK 版本，要求在 1.8 以上 -->
                                     <requireJavaVersion>
-                                        <version>1.6</version>
+                                        <version>1.8</version>
                                     </requireJavaVersion>
                                 </rules>
                                 <fail>true</fail>
@@ -871,6 +882,16 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
                     <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Implementation-Build>${buildNumber}</Implementation-Build>
+                                <Implementation-Timestamp>${timestamp}</Implementation-Timestamp>
+                                <Implementation-Branch>${scmBranch}</Implementation-Branch>
+                            </manifestEntries>
+                        </archive>
                         <warName>${project.artifactId}</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
@@ -936,6 +957,8 @@
                         <useReleaseProfile>true</useReleaseProfile>
                         <releaseProfiles>release</releaseProfiles>
                         <pushChanges>true</pushChanges>
+                        <remoteTagging>true</remoteTagging>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1005,6 +1028,23 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>${buildnumber-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${versions-maven-plugin.version}</version>
             </plugin>
@@ -1031,8 +1071,9 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <optimize>true</optimize>
+                    <parameters>true</parameters>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
-                    <!--<verbose>true</verbose>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -1051,6 +1092,16 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
                 <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build>${buildNumber}</Implementation-Build>
+                            <Implementation-Timestamp>${timestamp}</Implementation-Timestamp>
+                            <Implementation-Branch>${scmBranch}</Implementation-Branch>
+                        </manifestEntries>
+                    </archive>
                     <skipIfEmpty>true</skipIfEmpty>
                 </configuration>
             </plugin>
