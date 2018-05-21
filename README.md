@@ -5,7 +5,7 @@
 [![GitHub Release](https://img.shields.io/github/release/drtrang/parent.svg?style=flat-square)](https://github.com/drtrang/parent/releases)
 [![License](http://img.shields.io/badge/license-apache%202-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0)
 
-各个项目的公共依赖和插件。
+各个项目的公共依赖和插件，只支持 Java8。
 
 ## 依赖
 ```xml
