@@ -14,7 +14,7 @@
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent2</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -148,10 +148,10 @@
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trang.copiers.version>2.5.0</trang.copiers.version>
-        <trang.druid-spring-boot2-starter.version>1.1.9</trang.druid-spring-boot2-starter.version>
+        <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
         <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
-        <trang.redisson-spring-boot2-starter.version>1.1.1</trang.redisson-spring-boot2-starter.version>
-        <trang.spring-boot2-autoconfigure.version>1.1.1</trang.spring-boot2-autoconfigure.version>
+        <trang.redisson-spring-boot-starter.version>1.2.0</trang.redisson-spring-boot-starter.version>
+        <trang.spring-boot-autoconfigure.version>1.1.2</trang.spring-boot-autoconfigure.version>
         <trang.typehandlers-encrypt.version>1.1.1</trang.typehandlers-encrypt.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.3</univocity-parsers.version>
@@ -522,22 +522,22 @@
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>spring-boot2-autoconfigure</artifactId>
-                <version>${trang.spring-boot2-autoconfigure.version}</version>
+                <version>${trang.spring-boot-autoconfigure.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot2-starter</artifactId>
-                <version>${trang.druid-spring-boot2-starter.version}</version>
+                <version>${trang.druid-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot2-actuator-starter</artifactId>
-                <version>${trang.druid-spring-boot2-starter.version}</version>
+                <version>${trang.druid-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>redisson-spring-boot2-starter</artifactId>
-                <version>${trang.redisson-spring-boot2-starter.version}</version>
+                <version>${trang.redisson-spring-boot-starter.version}</version>
             </dependency>
             <!-- orika -->
             <!-- https://github.com/orika-mapper/orika -->
