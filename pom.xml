@@ -84,20 +84,20 @@
         <commons-configuration2.version>2.2</commons-configuration2.version>
         <commons-digester3.version>3.2</commons-digester3.version>
         <commons-io.version>2.6</commons-io.version>
-        <commons-logging.version>99.0-does-not-exist</commons-logging.version>
+        <commons-logging.version>1.2</commons-logging.version>
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-validator.version>1.6</commons-validator.version>
         <cron-utils.version>7.0.1</cron-utils.version>
         <curator.version>4.0.1</curator.version>
-        <druid.version>1.1.10</druid.version>
+        <druid.version>1.1.9</druid.version>
         <easypoi.version>3.1.0</easypoi.version>
         <elasticsearch.version>5.6.9</elasticsearch.version>
         <fastutil.version>8.1.1</fastutil.version>
         <fluent-validator.version>1.0.9</fluent-validator.version>
         <fst.version>2.57</fst.version>
         <guava.version>25.0-jre</guava.version>
-        <hppc.version>0.7.3</hppc.version>
+        <hppc.version>0.8.1</hppc.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <javasimon.version>4.1.4</javasimon.version>
         <javassist.version>3.22.0-GA</javassist.version>
@@ -129,7 +129,7 @@
         <phantomthief.cursor-iterator.version>1.0.10</phantomthief.cursor-iterator.version>
         <phantomthief.jedis-helper.version>0.1.10</phantomthief.jedis-helper.version>
         <phantomthief.model-view-builder.version>1.1.1</phantomthief.model-view-builder.version>
-        <phantomthief.more-lambdas.version>0.1.17</phantomthief.more-lambdas.version>
+        <phantomthief.more-lambdas.version>0.1.19</phantomthief.more-lambdas.version>
         <phantomthief.retrieve-id-utils.version>1.0.6</phantomthief.retrieve-id-utils.version>
         <phantomthief.scope.version>1.0.3</phantomthief.scope.version>
         <phantomthief.simple-failover.version>0.1.12</phantomthief.simple-failover.version>
@@ -149,10 +149,10 @@
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trang.copiers.version>2.5.1</trang.copiers.version>
-        <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
+        <trang.druid-spring-boot-starter.version>1.1.9</trang.druid-spring-boot-starter.version>
         <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
-        <trang.redisson-spring-boot-starter.version>1.2.0</trang.redisson-spring-boot-starter.version>
-        <trang.spring-boot-autoconfigure.version>1.1.2</trang.spring-boot-autoconfigure.version>
+        <trang.redisson-spring-boot-starter.version>1.2.1</trang.redisson-spring-boot-starter.version>
+        <trang.spring-boot-autoconfigure.version>1.1.3</trang.spring-boot-autoconfigure.version>
         <trang.typehandlers-encrypt.version>1.1.1</trang.typehandlers-encrypt.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.3</univocity-parsers.version>
@@ -392,6 +392,12 @@
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-client</artifactId>
                 <version>${elasticsearch.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- okhttp3 -->
             <!-- https://github.com/square/okhttp -->
@@ -610,11 +616,6 @@
                 <version>${commons-collections4.version}</version>
             </dependency>
             <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>${commons-logging.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>${commons-compress.version}</version>
@@ -623,6 +624,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-configuration2</artifactId>
                 <version>${commons-configuration2.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -661,6 +668,10 @@
                     <exclusion>
                         <groupId>commons-beanutils</groupId>
                         <artifactId>commons-beanutils</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -734,6 +745,12 @@
                 <groupId>tech.tablesaw</groupId>
                 <artifactId>tablesaw-core</artifactId>
                 <version>${tablesaw.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>tech.tablesaw</groupId>
@@ -767,6 +784,12 @@
                 <groupId>org.apache.pdfbox</groupId>
                 <artifactId>pdfbox</artifactId>
                 <version>${pdfbox.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- poi -->
             <!-- http://poi.apache.org -->
@@ -811,6 +834,12 @@
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-web</artifactId>
                 <version>${easypoi.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-logging</artifactId>
+                        <groupId>commons-logging</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- 性能测试 -->
             <!-- https://github.com/virgo47/javasimon -->
@@ -927,6 +956,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- 全局排除 commons-logging -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <!-- 项目发布管理 -->
     <distributionManagement>
