@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 声明项目描述符遵循的 POM 模型版本 -->
+    <!-- 项目遵循的 POM 模型版本 -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 不会继承 -->
+    <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 等不会继承 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <artifactId>spring-boot-dependencies</artifactId>
         <version>2.0.2.RELEASE</version>
     </parent>
 
@@ -90,7 +90,7 @@
         <commons-validator.version>1.6</commons-validator.version>
         <cron-utils.version>7.0.1</cron-utils.version>
         <curator.version>4.0.1</curator.version>
-        <druid.version>1.1.9</druid.version>
+        <druid.version>1.1.10</druid.version>
         <easypoi.version>3.1.0</easypoi.version>
         <fastutil.version>8.1.1</fastutil.version>
         <fluent-validator.version>1.0.9</fluent-validator.version>
@@ -147,7 +147,7 @@
         <tablesaw.version>0.12.0</tablesaw.version>
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
-        <trang.copiers.version>2.5.0</trang.copiers.version>
+        <trang.copiers.version>2.5.1</trang.copiers.version>
         <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
         <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
         <trang.redisson-spring-boot-starter.version>1.2.0</trang.redisson-spring-boot-starter.version>
@@ -315,7 +315,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!-- mybatis pagehelper 分页插件 -->
+            <!-- mybatis page-helper 分页插件 -->
             <!-- https://github.com/pagehelper/Mybatis-PageHelper -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
