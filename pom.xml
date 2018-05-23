@@ -14,7 +14,7 @@
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
