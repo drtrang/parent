@@ -84,6 +84,7 @@
         <commons-configuration2.version>2.2</commons-configuration2.version>
         <commons-digester3.version>3.2</commons-digester3.version>
         <commons-io.version>2.6</commons-io.version>
+        <commons-logging.version>1.2</commons-logging.version>
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-validator.version>1.6</commons-validator.version>
@@ -832,6 +833,12 @@
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-web</artifactId>
                 <version>${easypoi.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-logging</artifactId>
+                        <groupId>commons-logging</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- 性能测试 -->
             <!-- https://github.com/virgo47/javasimon -->
@@ -948,6 +955,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- 全局排除 commons-logging -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <!-- 项目发布管理 -->
     <distributionManagement>
