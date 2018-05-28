@@ -14,7 +14,7 @@
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.2.2-SNAPSHOT</version>
+    <version>1.2.2</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -78,7 +78,7 @@
         <auto-common.version>0.10</auto-common.version>
         <auto-value.version>1.6</auto-value.version>
         <cglib.version>3.2.6</cglib.version>
-        <chronicle-map.version>3.14.6</chronicle-map.version>
+        <chronicle-map.version>3.15.1</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-compress.version>1.16.1</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
@@ -90,13 +90,13 @@
         <commons-validator.version>1.6</commons-validator.version>
         <cron-utils.version>7.0.1</cron-utils.version>
         <curator.version>4.0.1</curator.version>
-        <druid.version>1.1.9</druid.version>
+        <druid.version>1.1.10</druid.version>
         <easypoi.version>3.1.0</easypoi.version>
         <elasticsearch.version>5.6.9</elasticsearch.version>
         <fastutil.version>8.1.1</fastutil.version>
         <fluent-validator.version>1.0.9</fluent-validator.version>
         <fst.version>2.57</fst.version>
-        <guava.version>25.0-jre</guava.version>
+        <guava.version>25.1-jre</guava.version>
         <hppc.version>0.8.1</hppc.version>
         <javax-persistence.version>1.0</javax-persistence.version>
         <javasimon.version>4.1.4</javasimon.version>
@@ -136,7 +136,7 @@
         <phantomthief.simple-pool.version>0.1.14</phantomthief.simple-pool.version>
         <phantomthief.stats-helper.version>0.2.1</phantomthief.stats-helper.version>
         <phantomthief.zkconfig-resources.version>1.1.22</phantomthief.zkconfig-resources.version>
-        <phantomthief.zknotify-cache.version>0.1.7</phantomthief.zknotify-cache.version>
+        <phantomthief.zknotify-cache.version>0.1.8</phantomthief.zknotify-cache.version>
         <poi.version>3.17</poi.version>
         <powermock.version>1.7.4</powermock.version>
         <redisson.version>3.7.0</redisson.version>
@@ -148,11 +148,11 @@
         <tablesaw.version>0.12.0</tablesaw.version>
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
-        <trang.copiers.version>2.5.1</trang.copiers.version>
-        <trang.druid-spring-boot-starter.version>1.1.9</trang.druid-spring-boot-starter.version>
+        <trang.copiers.version>2.5.3</trang.copiers.version>
+        <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
         <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
-        <trang.redisson-spring-boot-starter.version>1.2.1</trang.redisson-spring-boot-starter.version>
-        <trang.spring-boot-autoconfigure.version>1.1.3</trang.spring-boot-autoconfigure.version>
+        <trang.redisson-spring-boot-starter.version>1.2.2</trang.redisson-spring-boot-starter.version>
+        <trang.spring-boot-autoconfigure.version>1.1.4</trang.spring-boot-autoconfigure.version>
         <trang.typehandlers-encrypt.version>1.1.1</trang.typehandlers-encrypt.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.3</univocity-parsers.version>
