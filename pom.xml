@@ -80,7 +80,7 @@
         <cglib.version>3.2.6</cglib.version>
         <chronicle-map.version>3.15.1</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
-        <commons-compress.version>1.16.1</commons-compress.version>
+        <commons-compress.version>1.17</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
         <commons-digester3.version>3.2</commons-digester3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -88,12 +88,12 @@
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-validator.version>1.6</commons-validator.version>
-        <cron-utils.version>7.0.1</cron-utils.version>
+        <cron-utils.version>7.0.2</cron-utils.version>
         <curator.version>4.0.1</curator.version>
         <druid.version>1.1.10</druid.version>
-        <easypoi.version>3.1.0</easypoi.version>
+        <easypoi.version>3.2.0</easypoi.version>
         <elasticsearch.version>5.6.9</elasticsearch.version>
-        <fastutil.version>8.1.1</fastutil.version>
+        <fastutil.version>8.2.1</fastutil.version>
         <fluent-validator.version>1.0.9</fluent-validator.version>
         <fst.version>2.57</fst.version>
         <guava.version>25.1-jre</guava.version>
@@ -104,7 +104,7 @@
         <junit-params.version>1.1.1</junit-params.version>
         <junit-platform.version>1.2.0</junit-platform.version>
         <leakcanary.version>1.5.4</leakcanary.version>
-        <libphonenumber.version>8.9.6</libphonenumber.version>
+        <libphonenumber.version>8.9.7</libphonenumber.version>
         <logback-ext-spring.version>0.1.5</logback-ext-spring.version>
         <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
         <mapper.version>3.4.6</mapper.version>
@@ -131,7 +131,7 @@
         <phantomthief.model-view-builder.version>1.1.1</phantomthief.model-view-builder.version>
         <phantomthief.more-lambdas.version>0.1.19</phantomthief.more-lambdas.version>
         <phantomthief.retrieve-id-utils.version>1.0.6</phantomthief.retrieve-id-utils.version>
-        <phantomthief.scope.version>1.0.3</phantomthief.scope.version>
+        <phantomthief.scope.version>1.0.6</phantomthief.scope.version>
         <phantomthief.simple-failover.version>0.1.12</phantomthief.simple-failover.version>
         <phantomthief.simple-pool.version>0.1.14</phantomthief.simple-pool.version>
         <phantomthief.stats-helper.version>0.2.1</phantomthief.stats-helper.version>
@@ -139,7 +139,7 @@
         <phantomthief.zknotify-cache.version>0.1.8</phantomthief.zknotify-cache.version>
         <poi.version>3.17</poi.version>
         <powermock.version>1.7.4</powermock.version>
-        <redisson.version>3.7.0</redisson.version>
+        <redisson.version>3.7.1</redisson.version>
         <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
         <spring-boot.version>1.5.13.RELEASE</spring-boot.version>
         <streamex.version>0.6.7</streamex.version>
@@ -151,13 +151,13 @@
         <trang.copiers.version>2.5.3</trang.copiers.version>
         <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
         <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
-        <trang.redisson-spring-boot-starter.version>1.2.2</trang.redisson-spring-boot-starter.version>
+        <trang.redisson-spring-boot-starter.version>1.2.3</trang.redisson-spring-boot-starter.version>
         <trang.spring-boot-autoconfigure.version>1.1.4</trang.spring-boot-autoconfigure.version>
         <trang.typehandlers-encrypt.version>1.1.1</trang.typehandlers-encrypt.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.3</univocity-parsers.version>
         <xerces.version>2.11.0</xerces.version>
-        <zxing.version>3.3.2</zxing.version>
+        <zxing.version>3.3.3</zxing.version>
         <!-- Maven 插件 -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
