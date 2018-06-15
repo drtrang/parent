@@ -8,13 +8,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.0.2.RELEASE</version>
+        <version>2.0.3.RELEASE</version>
     </parent>
 
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent2</artifactId>
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -76,7 +76,7 @@
         <asm.version>6.0</asm.version>
         <automon.version>1.0.2</automon.version>
         <auto-common.version>0.10</auto-common.version>
-        <auto-value.version>1.6</auto-value.version>
+        <auto-value.version>1.6.1</auto-value.version>
         <cglib.version>3.2.6</cglib.version>
         <chronicle-map.version>3.15.1</chronicle-map.version>
         <commons-collections4.version>4.1</commons-collections4.version>
@@ -103,11 +103,11 @@
         <junit-params.version>1.1.1</junit-params.version>
         <junit-platform.version>1.2.0</junit-platform.version>
         <leakcanary.version>1.5.4</leakcanary.version>
-        <libphonenumber.version>8.9.7</libphonenumber.version>
+        <libphonenumber.version>8.9.8</libphonenumber.version>
         <logback-ext-spring.version>0.1.5</logback-ext-spring.version>
         <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
         <mapper.version>3.4.6</mapper.version>
-        <mockito.version>2.18.3</mockito.version>
+        <mockito.version>2.19.0</mockito.version>
         <mybatis-dynamic-sql.version>1.1.0</mybatis-dynamic-sql.version>
         <!-- 升级到 1.3.6 版本后出现子 Module 依赖找不到的问题 -->
         <mybatis-generator.version>1.3.5</mybatis-generator.version>
@@ -123,40 +123,42 @@
         <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
         <pcollections.version>3.0.2</pcollections.version>
         <pdfbox.version>2.0.9</pdfbox.version>
-        <phantomthief.adaptive-executor.version>0.1.4</phantomthief.adaptive-executor.version>
-        <phantomthief.buffer-trigger.version>0.2.9</phantomthief.buffer-trigger.version>
-        <phantomthief.cursor-iterator.version>1.0.10</phantomthief.cursor-iterator.version>
-        <phantomthief.jedis-helper.version>0.1.10</phantomthief.jedis-helper.version>
-        <phantomthief.model-view-builder.version>1.1.1</phantomthief.model-view-builder.version>
-        <phantomthief.more-lambdas.version>0.1.19</phantomthief.more-lambdas.version>
-        <phantomthief.retrieve-id-utils.version>1.0.6</phantomthief.retrieve-id-utils.version>
-        <phantomthief.scope.version>1.0.6</phantomthief.scope.version>
-        <phantomthief.simple-failover.version>0.1.12</phantomthief.simple-failover.version>
-        <phantomthief.simple-pool.version>0.1.14</phantomthief.simple-pool.version>
-        <phantomthief.stats-helper.version>0.2.1</phantomthief.stats-helper.version>
-        <phantomthief.zkconfig-resources.version>1.1.22</phantomthief.zkconfig-resources.version>
-        <phantomthief.zknotify-cache.version>0.1.8</phantomthief.zknotify-cache.version>
         <poi.version>3.17</poi.version>
         <powermock.version>1.7.4</powermock.version>
-        <redisson.version>3.7.1</redisson.version>
+        <redisson.version>3.7.2</redisson.version>
         <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
-        <spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
         <streamex.version>0.6.7</streamex.version>
         <strman.version>0.4.0</strman.version>
         <swagger2.version>2.8.0</swagger2.version>
         <tablesaw.version>0.12.0</tablesaw.version>
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
-        <trang.copiers.version>2.5.3</trang.copiers.version>
-        <trang.druid-spring-boot-starter.version>1.1.10</trang.druid-spring-boot-starter.version>
-        <trang.mybatis-generator-extension.version>0.0.4</trang.mybatis-generator-extension.version>
-        <trang.redisson-spring-boot-starter.version>1.2.2</trang.redisson-spring-boot-starter.version>
-        <trang.spring-boot-autoconfigure.version>1.1.4</trang.spring-boot-autoconfigure.version>
-        <trang.typehandlers-encrypt.version>1.1.1</trang.typehandlers-encrypt.version>
         <trove4j.version>3.0.3</trove4j.version>
         <univocity-parsers.version>2.6.3</univocity-parsers.version>
         <xerces.version>2.11.0</xerces.version>
         <zxing.version>3.3.3</zxing.version>
+        <!-- trang -->
+        <copiers.version>2.5.3</copiers.version>
+        <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
+        <mybatis-generator-extension.version>0.0.4</mybatis-generator-extension.version>
+        <redisson-spring-boot-starter.version>1.2.4</redisson-spring-boot-starter.version>
+        <spring-boot-autoconfigure.version>1.1.5</spring-boot-autoconfigure.version>
+        <typehandlers-encrypt.version>1.1.1</typehandlers-encrypt.version>
+        <!-- phantomthief -->
+        <adaptive-executor.version>0.1.4</adaptive-executor.version>
+        <buffer-trigger.version>0.2.11</buffer-trigger.version>
+        <cursor-iterator.version>1.0.10</cursor-iterator.version>
+        <jedis-helper.version>0.1.10</jedis-helper.version>
+        <model-view-builder.version>1.1.1</model-view-builder.version>
+        <more-lambdas.version>0.1.21</more-lambdas.version>
+        <retrieve-id-utils.version>1.0.6</retrieve-id-utils.version>
+        <scope.version>1.0.6</scope.version>
+        <simple-failover.version>0.1.12</simple-failover.version>
+        <simple-pool.version>0.1.14</simple-pool.version>
+        <stats-helper.version>0.2.1</stats-helper.version>
+        <zkconfig-resources.version>1.1.22</zkconfig-resources.version>
+        <zknotify-cache.version>0.1.8</zknotify-cache.version>
         <!-- Maven 插件 -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
@@ -215,15 +217,6 @@
                 <groupId>org.logback-extensions</groupId>
                 <artifactId>logback-ext-spring</artifactId>
                 <version>${logback-ext-spring.version}</version>
-            </dependency>
-            <!-- jackson -->
-            <!-- https://github.com/FasterXML/jackson-bom -->
-            <dependency>
-                <groupId>com.fasterxml.jackson</groupId>
-                <artifactId>jackson-bom</artifactId>
-                <version>${jackson.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
             </dependency>
             <!-- druid 数据库连接池 -->
             <!-- https://github.com/alibaba/druid -->
@@ -446,104 +439,104 @@
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>more-lambdas</artifactId>
-                <version>${phantomthief.more-lambdas.version}</version>
+                <version>${more-lambdas.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>stats-helper</artifactId>
-                <version>${phantomthief.stats-helper.version}</version>
+                <version>${stats-helper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>adaptive-executor</artifactId>
-                <version>${phantomthief.adaptive-executor.version}</version>
+                <version>${adaptive-executor.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>simple-failover</artifactId>
-                <version>${phantomthief.simple-failover.version}</version>
+                <version>${simple-failover.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>cursor-iterator</artifactId>
-                <version>${phantomthief.cursor-iterator.version}</version>
+                <version>${cursor-iterator.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>zknotify-cache</artifactId>
-                <version>${phantomthief.zknotify-cache.version}</version>
+                <version>${zknotify-cache.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>zkconfig-resources</artifactId>
-                <version>${phantomthief.zkconfig-resources.version}</version>
+                <version>${zkconfig-resources.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>retrieve-id-utils</artifactId>
-                <version>${phantomthief.retrieve-id-utils.version}</version>
+                <version>${retrieve-id-utils.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>jedis-helper</artifactId>
-                <version>${phantomthief.jedis-helper.version}</version>
+                <version>${jedis-helper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>model-view-builder</artifactId>
-                <version>${phantomthief.model-view-builder.version}</version>
+                <version>${model-view-builder.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>buffer-trigger</artifactId>
-                <version>${phantomthief.buffer-trigger.version}</version>
+                <version>${buffer-trigger.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>simple-pool</artifactId>
-                <version>${phantomthief.simple-pool.version}</version>
+                <version>${simple-pool.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>scope</artifactId>
-                <version>${phantomthief.scope.version}</version>
+                <version>${scope.version}</version>
             </dependency>
             <!-- 自己的工具库 -->
             <!-- https://github.com/drtrang -->
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>copiers</artifactId>
-                <version>${trang.copiers.version}</version>
+                <version>${copiers.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>typehandlers-encrypt</artifactId>
-                <version>${trang.typehandlers-encrypt.version}</version>
+                <version>${typehandlers-encrypt.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>mybatis-generator-extension</artifactId>
-                <version>${trang.mybatis-generator-extension.version}</version>
+                <version>${mybatis-generator-extension.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>spring-boot2-autoconfigure</artifactId>
-                <version>${trang.spring-boot-autoconfigure.version}</version>
+                <version>${spring-boot-autoconfigure.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot2-starter</artifactId>
-                <version>${trang.druid-spring-boot-starter.version}</version>
+                <version>${druid-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot2-actuator-starter</artifactId>
-                <version>${trang.druid-spring-boot-starter.version}</version>
+                <version>${druid-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>redisson-spring-boot2-starter</artifactId>
-                <version>${trang.redisson-spring-boot-starter.version}</version>
+                <version>${redisson-spring-boot-starter.version}</version>
             </dependency>
             <!-- orika -->
             <!-- https://github.com/orika-mapper/orika -->
@@ -1398,7 +1391,7 @@
                         <dependency>
                             <groupId>com.github.drtrang</groupId>
                             <artifactId>mybatis-generator-extension</artifactId>
-                            <version>${trang.mybatis-generator-extension.version}</version>
+                            <version>${mybatis-generator-extension.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>org.freemarker</groupId>

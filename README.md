@@ -13,13 +13,16 @@
 <dependency>
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
 </dependency>
 
 <!-- spring boot 2.x -->
 <dependency>
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent2</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
 </dependency>
 ```
+
+## 迭代计划
+跟随 spring-boot 的版本节奏，每当 spring-boot 发布新版本时会第一时间更新。
