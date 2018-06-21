@@ -7,14 +7,14 @@
     <!-- 声明父项目的坐标，继承其属性，artifactId、name、prerequisites 等不会继承 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.3.RELEASE</version>
     </parent>
 
     <!-- 项目的 Maven 坐标 -->
     <groupId>com.github.drtrang</groupId>
     <artifactId>parent2</artifactId>
-    <version>1.2.3</version>
+    <version>1.2.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- 项目描述 -->
@@ -73,13 +73,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- 基础依赖 -->
-        <asm.version>6.0</asm.version>
+        <asm.version>6.2</asm.version>
         <automon.version>1.0.2</automon.version>
         <auto-common.version>0.10</auto-common.version>
-        <auto-value.version>1.6.1</auto-value.version>
-        <cglib.version>3.2.6</cglib.version>
+        <auto-value.version>1.6.2</auto-value.version>
+        <cglib.version>3.2.7</cglib.version>
         <chronicle-map.version>3.15.1</chronicle-map.version>
-        <commons-collections4.version>4.1</commons-collections4.version>
+        <commons-collections4.version>4.2</commons-collections4.version>
         <commons-compress.version>1.17</commons-compress.version>
         <commons-configuration2.version>2.2</commons-configuration2.version>
         <commons-digester3.version>3.2</commons-digester3.version>
@@ -97,46 +97,45 @@
         <fst.version>2.57</fst.version>
         <guava.version>25.1-jre</guava.version>
         <hppc.version>0.8.1</hppc.version>
-        <javax-persistence.version>1.0</javax-persistence.version>
+        <javax.persistence-api.version>2.2</javax.persistence-api.version>
         <javasimon.version>4.1.4</javasimon.version>
         <javassist.version>3.22.0-GA</javassist.version>
         <junit-params.version>1.1.1</junit-params.version>
-        <junit-platform.version>1.2.0</junit-platform.version>
+        <junit-platform.version>1.3.0-M1</junit-platform.version>
         <leakcanary.version>1.5.4</leakcanary.version>
-        <libphonenumber.version>8.9.8</libphonenumber.version>
+        <libphonenumber.version>8.9.10</libphonenumber.version>
         <logback-ext-spring.version>0.1.5</logback-ext-spring.version>
-        <mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
-        <mapper.version>3.4.6</mapper.version>
-        <mockito.version>2.19.0</mockito.version>
+        <mapper.version>4.0.3</mapper.version>
+        <mapper-weekend.version>1.1.4</mapper-weekend.version>
+        <mapper-spring-boot-starter.version>2.0.3</mapper-spring-boot-starter.version>
+        <mockito.version>2.19.1</mockito.version>
         <mybatis-dynamic-sql.version>1.1.0</mybatis-dynamic-sql.version>
-        <!-- 升级到 1.3.6 版本后出现子 Module 依赖找不到的问题 -->
-        <mybatis-generator.version>1.3.5</mybatis-generator.version>
+        <mybatis-generator.version>1.3.7</mybatis-generator.version>
         <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
         <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
         <mybatis.version>3.4.6</mybatis.version>
         <mysql-binlog.version>0.16.1</mysql-binlog.version>
-        <netty.version>4.1.25.Final</netty.version>
-        <okhttp3.version>3.10.0</okhttp3.version>
+        <okhttp3.version>3.11.0</okhttp3.version>
         <orika.version>1.5.2</orika.version>
         <pagehelper.version>5.1.4</pagehelper.version>
         <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
         <pcollections.version>3.0.2</pcollections.version>
-        <pdfbox.version>2.0.9</pdfbox.version>
+        <pdfbox.version>2.0.11</pdfbox.version>
         <poi.version>3.17</poi.version>
-        <powermock.version>1.7.4</powermock.version>
-        <redisson.version>3.7.2</redisson.version>
-        <sharding-jdbc.version>2.0.3</sharding-jdbc.version>
+        <powermock.version>2.0.0-beta.5</powermock.version>
+        <redisson.version>3.7.5</redisson.version>
+        <sharding-sphere.version>3.0.0.M1</sharding-sphere.version>
         <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
         <streamex.version>0.6.7</streamex.version>
         <strman.version>0.4.0</strman.version>
-        <swagger2.version>2.8.0</swagger2.version>
-        <tablesaw.version>0.12.0</tablesaw.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <tablesaw.version>0.23.3</tablesaw.version>
         <testng.version>6.14.3</testng.version>
         <thumbnailator.version>0.4.8</thumbnailator.version>
         <trove4j.version>3.0.3</trove4j.version>
-        <univocity-parsers.version>2.6.3</univocity-parsers.version>
-        <xerces.version>2.11.0</xerces.version>
+        <univocity-parsers.version>2.7.2</univocity-parsers.version>
+        <xerces.version>2.12.0</xerces.version>
         <zxing.version>3.3.3</zxing.version>
         <!-- trang -->
         <copiers.version>2.5.3</copiers.version>
@@ -149,16 +148,32 @@
         <adaptive-executor.version>0.1.4</adaptive-executor.version>
         <buffer-trigger.version>0.2.11</buffer-trigger.version>
         <cursor-iterator.version>1.0.10</cursor-iterator.version>
-        <jedis-helper.version>0.1.10</jedis-helper.version>
-        <model-view-builder.version>1.1.1</model-view-builder.version>
-        <more-lambdas.version>0.1.21</more-lambdas.version>
+        <model-view-builder.version>1.1.2</model-view-builder.version>
+        <more-lambdas.version>0.1.25</more-lambdas.version>
         <retrieve-id-utils.version>1.0.6</retrieve-id-utils.version>
-        <scope.version>1.0.6</scope.version>
-        <simple-failover.version>0.1.12</simple-failover.version>
+        <scope.version>1.0.7</scope.version>
+        <simple-failover.version>0.1.14</simple-failover.version>
         <simple-pool.version>0.1.14</simple-pool.version>
-        <stats-helper.version>0.2.1</stats-helper.version>
-        <zkconfig-resources.version>1.1.22</zkconfig-resources.version>
-        <zknotify-cache.version>0.1.8</zknotify-cache.version>
+        <stats-helper.version>0.2.2</stats-helper.version>
+        <zkconfig-resources.version>1.1.23</zkconfig-resources.version>
+        <zknotify-cache.version>0.1.9</zknotify-cache.version>
+        <!-- 重写 spring-boot-dependencies 中定义的版本号 -->
+        <aspectj.version>1.9.1</aspectj.version>
+        <assertj.version>3.10.0</assertj.version>
+        <commons-dbcp2.version>2.5.0</commons-dbcp2.version>
+        <commons-pool2.version>2.6.0</commons-pool2.version>
+        <hikaricp.version>3.2.0</hikaricp.version>
+        <httpclient.version>4.5.6</httpclient.version>
+        <httpcore.version>4.4.10</httpcore.version>
+        <joda-time.version>2.10</joda-time.version>
+        <kotlin.version>1.2.51</kotlin.version>
+        <log4j2.version>2.11.0</log4j2.version>
+        <lombok.version>1.18.0</lombok.version>
+        <netty.version>4.1.27.Final</netty.version>
+        <javax-transaction.version>1.3</javax-transaction.version>
+        <rxjava2.version>2.1.16</rxjava2.version>
+        <!-- undertow 2.x 支持 servlet 4 和 http 2，大版本升级还是等 spring 官方吧 -->
+        <!--<undertow.version>2.0.11.Final</undertow.version>-->
         <!-- Maven 插件 -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
@@ -247,12 +262,12 @@
                 <version>${h2.version}</version>
                 <scope>runtime</scope>
             </dependency>
-            <!-- sharding-jdbc 数据库分片中间件 -->
+            <!-- sharding-sphere 数据库分片中间件 -->
             <!-- https://github.com/sharding-sphere/sharding-sphere -->
             <dependency>
-                <groupId>io.shardingjdbc</groupId>
-                <artifactId>sharding-jdbc-core</artifactId>
-                <version>${sharding-jdbc.version}</version>
+                <groupId>io.shardingsphere</groupId>
+                <artifactId>sharding-sphere</artifactId>
+                <version>${sharding-sphere.version}</version>
             </dependency>
             <!-- mybatis orm 框架 -->
             <!-- https://github.com/mybatis/mybatis-3 -->
@@ -289,13 +304,28 @@
             <!-- https://github.com/abel533/Mapper -->
             <dependency>
                 <groupId>tk.mybatis</groupId>
-                <artifactId>mapper</artifactId>
+                <artifactId>mapper-all</artifactId>
                 <version>${mapper.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.persistence</groupId>
+                        <artifactId>persistence-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+            <!-- mapper-core 中依赖的 persistence-api 太古老了，用这个吧 -->
             <dependency>
                 <groupId>javax.persistence</groupId>
-                <artifactId>persistence-api</artifactId>
-                <version>${javax-persistence.version}</version>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${javax.persistence-api.version}</version>
+            </dependency>
+            <!-- mapper-all 中的 weekend 不是最新的，手动声明一下最新版本 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-weekend</artifactId>
+                <version>${mapper-weekend.version}</version>
             </dependency>
             <dependency>
                 <groupId>tk.mybatis</groupId>
@@ -303,8 +333,8 @@
                 <version>${mapper-spring-boot-starter.version}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.mybatis.spring.boot</groupId>
-                        <artifactId>mybatis-spring-boot-starter</artifactId>
+                        <groupId>javax.persistence</groupId>
+                        <artifactId>persistence-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -327,15 +357,6 @@
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
                 <version>${mybatis-generator.version}</version>
-            </dependency>
-            <!-- netty -->
-            <!-- https://github.com/netty/netty -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>${netty.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <!-- curator -->
             <!-- https://github.com/apache/curator -->
@@ -427,6 +448,14 @@
                 <artifactId>asm</artifactId>
                 <version>${asm.version}</version>
             </dependency>
+            <!-- lombok，spring boot 的默认版本不是最新 -->
+            <!-- https://projectlombok.org/ -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
             <!-- java8 stream 拓展 -->
             <!-- https://github.com/amaembo/streamex -->
             <dependency>
@@ -475,11 +504,6 @@
                 <groupId>com.github.phantomthief</groupId>
                 <artifactId>retrieve-id-utils</artifactId>
                 <version>${retrieve-id-utils.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.phantomthief</groupId>
-                <artifactId>jedis-helper</artifactId>
-                <version>${jedis-helper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.phantomthief</groupId>
@@ -546,12 +570,12 @@
                 <version>${orika.version}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.javassist</groupId>
-                        <artifactId>javassist</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>org.slf4j</groupId>
                         <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.javassist</groupId>
+                        <artifactId>javassist</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -594,13 +618,14 @@
                 <artifactId>thumbnailator</artifactId>
                 <version>${thumbnailator.version}</version>
             </dependency>
-            <!-- 通用类库 -->
+            <!-- google 工类库 -->
             <!-- https://github.com/google/guava -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+            <!-- apache 工类库 -->
             <!-- https://github.com/apache/commons-collections/ -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -720,6 +745,7 @@
                 <artifactId>hppc</artifactId>
                 <version>${hppc.version}</version>
             </dependency>
+            <!-- https://pcollections.org -->
             <dependency>
                 <groupId>org.pcollections</groupId>
                 <artifactId>pcollections</artifactId>
@@ -743,26 +769,6 @@
                         <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>tech.tablesaw</groupId>
-                <artifactId>tablesaw-plot</artifactId>
-                <version>${tablesaw.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>tech.tablesaw</groupId>
-                <artifactId>tablesaw-smile</artifactId>
-                <version>${tablesaw.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>tech.tablesaw</groupId>
-                <artifactId>tablesaw-beakerx</artifactId>
-                <version>${tablesaw.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>tech.tablesaw</groupId>
-                <artifactId>tablesaw-aggregate</artifactId>
-                <version>${tablesaw.version}</version>
             </dependency>
             <!-- xml 解析 -->
             <dependency>
@@ -874,12 +880,6 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.ow2.asm</groupId>
-                        <artifactId>asm</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <!-- https://github.com/junit-team/junit5 -->
             <dependency>
@@ -979,10 +979,16 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <mvn.profile.active>dev</mvn.profile.active>
+            </properties>
         </profile>
         <!-- 测试 profile -->
         <profile>
             <id>coveralls</id>
+            <properties>
+                <mvn.profile.active>coveralls</mvn.profile.active>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -1010,6 +1016,9 @@
         <!-- 校验 profile -->
         <profile>
             <id>valid</id>
+            <properties>
+                <mvn.profile.active>valid</mvn.profile.active>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -1022,6 +1031,9 @@
         <!-- 正式 profile -->
         <profile>
             <id>release</id>
+            <properties>
+                <mvn.profile.active>release</mvn.profile.active>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -1052,7 +1064,7 @@
     <!-- 项目构建信息，可以被继承 -->
     <build>
         <defaultGoal>package</defaultGoal>
-        <finalName>${project.artifactId}-${project.version}-${buildNumber}</finalName>
+        <finalName>${project.artifactId}-${project.version}-${git.commit.id.abbrev}</finalName>
         <!-- 项目插件管理 -->
         <pluginManagement>
             <plugins>
@@ -1061,22 +1073,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>${maven-clean-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>${buildnumber-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>create</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <shortRevisionLength>6</shortRevisionLength>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1122,9 +1118,9 @@
                                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             </manifest>
                             <manifestEntries>
-                                <Implementation-Build>$\{buildNumber}</Implementation-Build>
-                                <Implementation-Timestamp>$\{timestamp}</Implementation-Timestamp>
-                                <Implementation-Branch>$\{scmBranch}</Implementation-Branch>
+                                <Implementation-Branch>${git.branch}</Implementation-Branch>
+                                <Implementation-Build>${git.commit.id.abbrev}</Implementation-Build>
+                                <Implementation-Timestamp>${git.build.time}</Implementation-Timestamp>
                             </manifestEntries>
                         </archive>
                         <skipIfEmpty>true</skipIfEmpty>
@@ -1140,12 +1136,11 @@
                                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             </manifest>
                             <manifestEntries>
-                                <Implementation-Build>$\{buildNumber}</Implementation-Build>
-                                <Implementation-Timestamp>$\{timestamp}</Implementation-Timestamp>
-                                <Implementation-Branch>$\{scmBranch}</Implementation-Branch>
+                                <Implementation-Branch>${git.branch}</Implementation-Branch>
+                                <Implementation-Build>${git.commit.id.abbrev}</Implementation-Build>
+                                <Implementation-Timestamp>${git.build.time}</Implementation-Timestamp>
                             </manifestEntries>
                         </archive>
-                        <warName>${project.artifactId}</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
@@ -1233,7 +1228,6 @@
                                         <!-- 被禁止的依赖，表达式规则：groupId[:artifactId][:version][:type][:scope][:classifier] -->
                                         <excludes>
                                             <exclude>org.slf4j:*</exclude>
-                                            <exclude>aspectj:aspectj*</exclude>
                                         </excludes>
                                         <!-- 例外依赖，只能包含 excludes 中已有的依赖 -->
                                         <includes>
@@ -1325,6 +1319,23 @@
                     <artifactId>tycho-versions-plugin</artifactId>
                     <version>${tycho-versions-plugin.version}</version>
                 </plugin>
+                <!-- build 信息插件，和 git-commit-id-plugin 作用差不多，用另一个代替了 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>${buildnumber-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>create</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <shortRevisionLength>6</shortRevisionLength>
+                    </configuration>
+                </plugin>
                 <!-- 下面三个是代码覆盖率插件 -->
                 <plugin>
                     <groupId>org.eluder.coveralls</groupId>
@@ -1366,6 +1377,7 @@
                     </executions>
                 </plugin>
                 <!-- mybatis 代码生成器插件 -->
+                <!-- http://www.mybatis.org/generator/running/runningWithMaven.html -->
                 <plugin>
                     <groupId>org.mybatis.generator</groupId>
                     <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -1384,9 +1396,14 @@
                             <version>${mysql.version}</version>
                         </dependency>
                         <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
+                        </dependency>
+                        <dependency>
                             <groupId>tk.mybatis</groupId>
-                            <artifactId>mapper</artifactId>
-                            <version>${mapper.version}</version>
+                            <artifactId>mapper-generator</artifactId>
+                            <version>1.0.4</version>
                         </dependency>
                         <dependency>
                             <groupId>com.github.drtrang</groupId>
@@ -1400,25 +1417,64 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+                <!-- 以下是继承自 spring-boot-starter-parent 的插件，重写或额外加一些配置 -->
+                <!-- 生成 build-info 文件，再额外加一些变量 -->
+                <!-- https://docs.spring.io/spring-boot/docs/current/maven-plugin -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <excludes>
+                            <exclude>
+                                <groupId>commons-logging</groupId>
+                                <artifactId>commons-logging</artifactId>
+                            </exclude>
+                        </excludes>
+                        <additionalProperties>
+                            <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                            <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                            <java.source>${maven.compiler.source}</java.source>
+                            <java.target>${maven.compiler.target}</java.target>
+                        </additionalProperties>
+                    </configuration>
+                </plugin>
+                <!-- https://github.com/ktoso/maven-git-commit-id-plugin -->
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <configuration>
+                        <abbrevLength>8</abbrevLength>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                        <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+                        <commitIdGenerationMode>full</commitIdGenerationMode>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
-        <!-- 项目插件，子项目会继承 -->
+        <!-- 项目插件，子项目会继承这些插件，不用再主动声明 -->
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

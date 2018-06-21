@@ -25,4 +25,4 @@
 ```
 
 ## 迭代计划
-跟随 spring-boot 的版本节奏，每当 spring-boot 发布新版本时会第一时间更新。
+跟随 spring-boot 的版本节奏，每当 spring-boot 发布新版本后会第一时间更新。
