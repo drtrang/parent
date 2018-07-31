@@ -6,5 +6,3 @@ install: false
 cache:
   directories:
     - $HOME/.m2/repository
-after_success:
-  - mvn clean test -Pcoveralls jacoco:report coveralls:report
